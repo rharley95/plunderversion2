@@ -8,6 +8,10 @@ package piratesgame;
 
 import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.model.Actor;
+import byui.cit260.piratesgame.model.Inventory;
+import byui.cit260.piratesgame.model.Location;
+import byui.cit260.piratesgame.model.Map;
+import byui.cit260.piratesgame.model.riddleScene;
 
 import java.awt.Point;
 
