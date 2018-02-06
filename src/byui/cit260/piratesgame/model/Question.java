@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.plunderversion2.model;
+package byui.cit260.piratesgame.model;
 
 import java.util.Objects;
 import java.io.Serializable;
@@ -11,38 +11,39 @@ import java.io.Serializable;
  *
  * @author madug
  */
-class Questions implements Serializable{
+class Question implements Serializable{
     
     private String questions;
     private String answer;
-    private Questionscene questionscene;
+    private QuestionScene questionscene;
 
-    public Questions() {
+    public Question() {
     }
     
     
 
     public String getQuestion() {
-        return question;
+        return questions;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestions(String question) {
+        this.questions = question;
     }
 
-    public string getAnswer() {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(string answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.question);
-        hash = 29 * hash + Objects.hashCode(this.answer);
+        int hash = 3;
+        hash = 61 * hash + Objects.hashCode(this.questions);
+        hash = 61 * hash + Objects.hashCode(this.answer);
+        hash = 61 * hash + Objects.hashCode(this.questionscene);
         return hash;
     }
 
@@ -58,18 +59,23 @@ class Questions implements Serializable{
             return false;
         }
         final Question other = (Question) obj;
-        if (!Objects.equals(this.question, other.question)) {
+        if (!Objects.equals(this.questions, other.questions)) {
             return false;
         }
         if (!Objects.equals(this.answer, other.answer)) {
             return false;
         }
+        if (!Objects.equals(this.questionscene, other.questionscene)) {
+            return false;
+        }
         return true;
     }
 
+   
+
     @Override
     public String toString() {
-        return "Question{" + "question=" + question + ", answer=" + answer + '}';
+        return "Question{" + "question=" + questions + ", answer=" + answer + '}';
     }
     
     
