@@ -29,7 +29,7 @@ public class RiddleScene implements Serializable{
         this.actorType = actorType;
     }
     
-    
+ 
 
     public double getRiddleType() {
         return riddleType;
@@ -63,6 +63,9 @@ public class RiddleScene implements Serializable{
         this.riddle = riddle;
     }
 
+    
+    
+    
     @Override
     public String toString() {
         return "riddleScene{" + "riddleType=" + riddleType + ", fail=" + fail + ", answer=" + answer + ", riddle=" + riddle + '}';

@@ -21,6 +21,7 @@ public class Player implements Serializable{
     private double bestTime;
     private String role;
     private ArrayList<Game> games = new ArrayList<Game>();
+    private ArrayList<Actor> character = new ArrayList<Actor>();
 
     public Player() {
     }
@@ -61,6 +62,16 @@ public class Player implements Serializable{
     public void setRole(String role) {
         this.role = role;
     }
+
+    public ArrayList<Actor> getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(ArrayList<Actor> character) {
+        this.character = character;
+    }
+    
+    
 
     @Override
     public int hashCode() {

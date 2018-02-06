@@ -6,6 +6,7 @@
 package byui.cit260.piratesgame.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -19,6 +20,7 @@ public class Game implements Serializable{
     private double quitGame;
     private Player player;
     private Map map;
+    private ArrayList<Actor> character = new ArrayList<Actor>();
     
     
     
@@ -73,6 +75,15 @@ public class Game implements Serializable{
     public void setMap(Map map) {
         this.map = map;
     }
+
+    public ArrayList<Actor> getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(ArrayList<Actor> character) {
+        this.character = character;
+    }
+    
     
     
     
