@@ -6,12 +6,8 @@
 package piratesgame;
 
 
-import byui.cit260.piratesgame.model.Player;
-import byui.cit260.piratesgame.model.Actor;
-import byui.cit260.piratesgame.model.Inventory;
-import byui.cit260.piratesgame.model.Location;
-import byui.cit260.piratesgame.model.Map;
-import byui.cit260.piratesgame.model.riddleScene;
+import byui.cit260.piratesgame.model.*;
+
 
 import java.awt.Point;
 
@@ -44,6 +40,8 @@ public class Piratesgame {
        
         System.out.println("Name = " + playerOneName +
                        ", time = " + playerOneBestTime + ", role =" + playerOneRole);
+        
+       
     }
     
 }

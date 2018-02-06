@@ -16,6 +16,8 @@ public class Inventory implements Serializable{
     private double inventoryType;
     private int quantityInStock;
     private int requiredAmount;
+    private Inventory item = new Inventory();
+//    private ResourceScene scene;
 
     public Inventory() {
     }
@@ -43,6 +45,16 @@ public class Inventory implements Serializable{
     public void setRequiredAmount(int requiredAmount) {
         this.requiredAmount = requiredAmount;
     }
+
+    public Inventory getItem() {
+        return item;
+    }
+
+    public void setItem(Inventory item) {
+        this.item = item;
+    }
+    
+    
 
     @Override
     public String toString() {
