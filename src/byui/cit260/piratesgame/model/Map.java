@@ -19,9 +19,12 @@ public class Map implements Serializable{
     private double columnCount;
     private double currentRow;
     private double currentColumn;
+    private Location[][] locations = new Location[0][0];
+    private Game game = new Game();
 
     public Map() {
-    }
+    }    
+    
     
     
 
@@ -64,6 +67,26 @@ public class Map implements Serializable{
     public void setCurrentColumn(double currentColumn) {
         this.currentColumn = currentColumn;
     }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+    
+    
+    
+    
 
     @Override
     public String toString() {
