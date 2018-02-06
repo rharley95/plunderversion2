@@ -11,7 +11,7 @@ import byui.cit260.piratesgame.model.Actor;
 import byui.cit260.piratesgame.model.Inventory;
 import byui.cit260.piratesgame.model.Location;
 import byui.cit260.piratesgame.model.Map;
-import byui.cit260.piratesgame.model.riddleScene;
+import byui.cit260.piratesgame.model.RiddleScene;
 
 import java.awt.Point;
 

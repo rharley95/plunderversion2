@@ -18,6 +18,7 @@ public class Game implements Serializable{
     private double saveGame;
     private double quitGame;
     private Player player;
+    private Map map;
     
     
     
@@ -64,6 +65,17 @@ public class Game implements Serializable{
     public void setQuitGame(double quitGame) {
         this.quitGame = quitGame;
     }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+    
+    
 
     @Override
     public int hashCode() {

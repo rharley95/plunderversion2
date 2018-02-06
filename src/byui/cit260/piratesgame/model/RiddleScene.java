@@ -10,14 +10,23 @@ import java.util.Objects;
  *
  * @author rominapainter
  */
-public class riddleScene implements Serializable{
+public class RiddleScene implements Serializable{
     
     private double riddleType;
     private String fail;
     private String answer;
     private String riddle;
+    private Actor actorType;
 
-    public riddleScene() {
+    public RiddleScene() {
+    }
+
+    public Actor getActorType() {
+        return actorType;
+    }
+
+    public void setActorType(Actor actorType) {
+        this.actorType = actorType;
     }
     
     
@@ -80,7 +89,7 @@ public class riddleScene implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final riddleScene other = (riddleScene) obj;
+        final RiddleScene other = (RiddleScene) obj;
         if (Double.doubleToLongBits(this.riddleType) != Double.doubleToLongBits(other.riddleType)) {
             return false;
         }

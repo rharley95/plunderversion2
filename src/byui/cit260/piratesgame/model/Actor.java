@@ -21,7 +21,11 @@ public enum Actor {
     private String description;
     private Point coordinates;
     private int actorType;
-
+    private RiddleScene riddle = new RiddleScene();
+//    private CombatScene combatType;
+    private Location[] place = new Location[1];
+            
+            
     Actor(String name, String description, Point coordinates, int actorType){
     this.name = name;
     this.description = description;
@@ -61,6 +65,24 @@ public enum Actor {
     public void setActorType(int actorType) {
         this.actorType = actorType;
     }
+
+    public RiddleScene getRiddle() {
+        return riddle;
+    }
+
+    public void setRiddle(RiddleScene riddle) {
+        this.riddle = riddle;
+    }
+
+    public Location[] getPlace() {
+        return place;
+    }
+
+    public void setPlace(Location[] place) {
+        this.place = place;
+    }
+    
+    
 
     @Override
     public String toString() {
