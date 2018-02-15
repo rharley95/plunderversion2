@@ -13,12 +13,12 @@ public class CrewControl {
   
     public double catchCrewMemeber(double length,double height){
 
-         if (length < 1 || length > 10){
+         if (length < 1 || length > 11){
          return -1;
         }
 
 
-          if (height <1 || height > 10){
+          if (height <1 || height > 11){
          return -2;  
          }
 
