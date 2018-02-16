@@ -5,6 +5,7 @@
  */
 package citbyui.cit260piratesgame.control;
 
+import byui.cit260.piratesgame.control.CrewControl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
