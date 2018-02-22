@@ -6,13 +6,17 @@
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/QuestionScene.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/RiddleScene.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Question.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/CombatScene.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/piratesgame/Piratesgame.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Actor.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/CrewControl.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Location.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Player.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/ResourceScene.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Actor.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/RegularScene.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Map.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Inventory.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/ResourceScene.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/TexasRiddle.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Game.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/SolveRiddle.java</file>
         </group>
