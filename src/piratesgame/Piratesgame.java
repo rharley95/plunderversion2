@@ -10,21 +10,46 @@ import byui.cit260.piratesgame.model.*;
 import citbyui.cit260.piratesgame.view.StartProgramView;
 
 
-import java.awt.Point;
 
 /**
  *
  * @author rominapainter
  */
-public class Piratesgame {
+
+
+
+public class PiratesGame {
 
 
     /**
      * @param args the command line arguments
      */
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+    
+    
     public static void main(String[] args) {
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.displayStartProgramView();
+       
+       
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        PiratesGame.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        PiratesGame.player = player;
     }
     
 }

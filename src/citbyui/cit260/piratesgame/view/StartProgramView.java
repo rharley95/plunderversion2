@@ -30,7 +30,7 @@ public class StartProgramView implements Serializable {
         do {
             String[] inputs = this.getInputs();
 
-            if (inputs[0].length() < 1 || inputs[0].equals('Q')) {
+            if (inputs[0].length() < 1 || inputs[0].equals("Q")) {
                 return;
             }
             endView = doAction(inputs);
