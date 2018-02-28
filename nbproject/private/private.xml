@@ -6,10 +6,14 @@
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/StartProgramView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/CrewControl.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Location.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/GameMenuView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/GameControl.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/MapControl.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/MainMenuView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/piratesgame/PiratesGame.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/SolveRiddle.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/InventoryControl.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/test/byui/cit260/piratesgame/control/MapControlTest.java</file>
         </group>
     </open-files>
 </project-private>
