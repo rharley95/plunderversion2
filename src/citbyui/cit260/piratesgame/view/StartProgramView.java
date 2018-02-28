@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.piratesgame.view;
 
+import byui.cit260.piratesgame.control.GameControl;
+import byui.cit260.piratesgame.model.Player;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -63,8 +65,24 @@ public class StartProgramView implements Serializable {
     }
 
     private boolean doAction(String[] inputs) {
-        System.out.println("**** doAction() called****");
-        System.out.println("\tinputs = " + inputs[0]);
+        String playersName = inputs[0];
+        Player player = GameControl.savePlayer(playersName);
+        if (player == null) {
+            System.out.println("could not create the player"
+                    + "enter a different name.");
+            return false;
+        }
+        
+
+        System.out.println("================================================= " +
+                 "\nWelcome to the game " + playersName +
+                "\nWe hope you have a lot of fun!" + 
+                "\n=================================================");
+    
+    
+   MainMenuView mainMenuView = new MainMenuView();
+
+        mainMenuView.displayMainMenuView();
 
         return true;
     }
