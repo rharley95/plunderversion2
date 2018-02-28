@@ -28,6 +28,12 @@ public class GameControl implements Serializable{
       return player;
     }
     
+    public static void createNewGame(Player player) {
+        System.out.println("Welcome to a new game!");
+    
+    
+    }
+    
     
     
     
