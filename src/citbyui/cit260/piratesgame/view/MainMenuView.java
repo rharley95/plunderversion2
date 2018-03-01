@@ -5,6 +5,12 @@
  */
 package citbyui.cit260.piratesgame.view;
 
+import byui.cit260.piratesgame.control.GameControl;
+import byui.cit260.piratesgame.model.Game;
+import byui.cit260.piratesgame.model.Player;
+import java.util.Scanner;
+import piratesgame.PiratesGame;
+
 /**
  *
  * @author madug
@@ -17,7 +23,7 @@ public class MainMenuView {
         do {
             String[] inputs = this.getInputs();
 
-            if (inputs[0].length() < 1 || inputs[0].equals('Q')) {
+            if (inputs[0].length() < 1 || inputs[0].equals("Q")) {
                 return;
             }
             endView = doAction(inputs);
@@ -27,21 +33,75 @@ public class MainMenuView {
    }
 
     private String[] getInputs() {
-        System.out.println("Display message");
         
-        String[]inputs = new String[1];
-        inputs[0] = "testInput";
-        
+        String[] inputs = new String[1];
+
+        boolean valid = false;
+        while (valid == false) {
+
+            System.out.println(" N - New Game\n" +
+                               "  L - Load Game\n" +
+                               "  H - Help\n" +
+                               "  Q - Quit Program");
+            
+            Scanner userResponse = new Scanner(System.in);
+            String response = userResponse.nextLine();
+            String userInput = response.trim();
+            
+
+            if (userInput.length() < 1) {
+                System.out.println("You must enter non-blank value.");
+                continue;
+            }
+
+            inputs[0] = userInput;
+            valid = true;
+        }
+
         return inputs;
+        
     }
     
 
     private boolean doAction(String[] inputs) {
-        System.out.println("Display message");
-      
         
-        System.out.println("***doAction() called ***");
-        System.out.println("tinputs =" + inputs[0]);
-        return true;
+      String menuItem = inputs[0];
+      menuItem = inputs[0].toUpperCase();
+      
+      switch (menuItem) {
+          case "N" : startNewGame();
+          break;
+          case "L" : loadGame();
+          break;
+          case "H" : getHelp();
+          break;
+          case "Q" : return true;
+          default: System.out.println("Please enter a valid option.");
+      }
+
+        return false;
+    }
+
+    private void startNewGame() {
+        
+        Game game = new Game();
+        GameControl.createNewGame(PiratesGame.getPlayer());
+        GameMenuView gameMenuView = new GameMenuView();
+
+        gameMenuView.displayGameMenuView();
+    }
+
+    private void getHelp() {
+  
+        HelpMenuView helpMenuView = new HelpMenuView();
+
+        helpMenuView.displayHelpMenuView();
+    }
+
+    private void loadGame() {
+        
+        LoadGameView loadGameView = new LoadGameView();
+
+        loadGameView.displayLoadGameView();
     }
 }
