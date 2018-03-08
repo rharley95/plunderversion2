@@ -5,10 +5,14 @@
  */
 package byui.cit260.piratesgame.control;
 
+import byui.cit260.piratesgame.model.Inventory;
+import piratesgame.PiratesGame;
+
 /**
  *
- * @author madug
+ * @author romi
  */
 public class InventoryControl {
-    
+
+   
 }

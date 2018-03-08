@@ -42,9 +42,10 @@ public class MainMenuView {
             System.out.println(" N - New Game\n" +
                                "  L - Load Game\n" +
                                "  H - Help\n" +
+                               "  M - Map\n" +
                                "  Q - Quit Program");
             
-            Scanner userResponse = new Scanner(System.in);
+            Scanner  = new Scanner(System.in);
             String response = userResponse.nextLine();
             String userInput = response.trim();
             
@@ -75,6 +76,8 @@ public class MainMenuView {
           break;
           case "H" : getHelp();
           break;
+          case "M" : mapMenu();
+          break;
           case "Q" : return true;
           default: System.out.println("Please enter a valid option.");
       }
@@ -103,5 +106,11 @@ public class MainMenuView {
         LoadGameView loadGameView = new LoadGameView();
 
         loadGameView.displayLoadGameView();
+    }
+
+    private void mapMenu() {
+        MapMenuView mapMenuView = new MapMenuView();
+
+        mapMenuView.displayMapMenuView();
     }
 }
