@@ -6,6 +6,9 @@
 package byui.cit260.piratesgame.model;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Objects;
 /**
  *
  * @author rominapainter
@@ -13,20 +16,27 @@ import java.io.Serializable;
 public class Inventory implements Serializable{
     
     
-    private double inventoryType;
+    private String inventoryType;
     private int quantityInStock;
-    private int requiredAmount;
-    private Inventory item = new Inventory();
+    private int maxAmount;
+    private Array[] Item;
+    private Inventory inventory = new Inventory();
 //    private ResourceScene scene;
 
     public Inventory() {
     }
 
-    public double getInventoryType() {
+    public Inventory(String inventoryType, int quantityInStock, int maxAmount) {
+        this.inventoryType = inventoryType;
+        this.quantityInStock = quantityInStock;
+        this.maxAmount = maxAmount;
+    }
+
+    public String getInventoryType() {
         return inventoryType;
     }
 
-    public void setInventoryType(double inventoryType) {
+    public void setInventoryType(String inventoryType) {
         this.inventoryType = inventoryType;
     }
 
@@ -38,37 +48,35 @@ public class Inventory implements Serializable{
         this.quantityInStock = quantityInStock;
     }
 
-    public int getRequiredAmount() {
-        return requiredAmount;
+    public int getMaxAmount() {
+        return maxAmount;
     }
 
-    public void setRequiredAmount(int requiredAmount) {
-        this.requiredAmount = requiredAmount;
+    public void setMaxAmount(int requiredAmount) {
+        this.maxAmount = requiredAmount;
     }
 
-    public Inventory getItem() {
-        return item;
+    public Array[] getItem() {
+        return Item;
     }
 
-    public void setItem(Inventory item) {
-        this.item = item;
+    public void setItem(Array[] Item) {
+        this.Item = Item;
     }
-    
-    
 
     @Override
     public String toString() {
-        return "Inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+        return "Inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", maxAmount=" + maxAmount + ", Item=" + Item + ", inventory=" + inventory + '}';
     }
-    
-    
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 61 * hash + (int) (Double.doubleToLongBits(this.inventoryType) ^ (Double.doubleToLongBits(this.inventoryType) >>> 32));
-        hash = 61 * hash + this.quantityInStock;
-        hash = 61 * hash + this.requiredAmount;
+        hash = 19 * hash + Objects.hashCode(this.inventoryType);
+        hash = 19 * hash + this.quantityInStock;
+        hash = 19 * hash + this.maxAmount;
+        hash = 19 * hash + Arrays.deepHashCode(this.Item);
+        hash = 19 * hash + Objects.hashCode(this.inventory);
         return hash;
     }
 
@@ -84,21 +92,27 @@ public class Inventory implements Serializable{
             return false;
         }
         final Inventory other = (Inventory) obj;
-        if (Double.doubleToLongBits(this.inventoryType) != Double.doubleToLongBits(other.inventoryType)) {
-            return false;
-        }
         if (this.quantityInStock != other.quantityInStock) {
             return false;
         }
-        if (this.requiredAmount != other.requiredAmount) {
+        if (this.maxAmount != other.maxAmount) {
+            return false;
+        }
+        if (!Objects.equals(this.inventoryType, other.inventoryType)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.Item, other.Item)) {
+            return false;
+        }
+        if (!Objects.equals(this.inventory, other.inventory)) {
             return false;
         }
         return true;
     }
-    
-    
 
     
+   
+
     
     
     
