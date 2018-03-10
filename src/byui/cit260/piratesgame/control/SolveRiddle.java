@@ -11,7 +11,7 @@ package byui.cit260.piratesgame.control;
  */
 public class SolveRiddle {
 
-    public double solveRiddle(double diameter, double guess) {
+    public static double solveRiddle(double diameter, double guess) {
         if (diameter < 10 || diameter > 50) {
             return -1;
         }
