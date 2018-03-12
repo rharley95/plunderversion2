@@ -41,12 +41,15 @@ public class MainMenuView {
             System.out.println(" N - New Game\n"
                     + "  L - Load Game\n"
                     + "  H - Help\n"
-                    + "P - Pick Crew member\n"
-                   + "R - Riddle\n"
-                    + "T- Talk to Crew Member\n"
+                    + "  P - Pick Crew member\n"
+                    + "  R - Riddle\n"
+                    + "  M - Map\n" 
+                    + "  T- Talk to Crew Member\n"
                     + "  Q - Quit Program");
 
-            Scanner userResponse = new Scanner(System.in);
+     
+            Scanner userResponse  = new Scanner(System.in);
+
             String response = userResponse.nextLine();
             String userInput = response.trim();
 
@@ -63,13 +66,12 @@ public class MainMenuView {
 
     }
 
-    private boolean doAction(String[] inputs) {
-
+     private boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
-        menuItem = inputs[0].toUpperCase();
+//        menuItem = inputs[0].toUpperCase();
 
         switch (menuItem) {
-            case "N":
+             case "N":
                 startNewGame();
                 break;
             case "L":
@@ -88,8 +90,12 @@ public class MainMenuView {
                 riddleSo();
                 break;
             case "T":
-                talkCrew();
+            talkCrew();
                 break;
+            case "M" :
+             mapMenu();
+              break;
+                
             case "Q":
                 return true;
             default:
@@ -145,5 +151,11 @@ public class MainMenuView {
        PickCrewView pickCrewView = new PickCrewView();
        
        pickCrewView.displayPickCrew();
+    }
+
+    private void mapMenu() {
+       MapMenuView mapMenuView = new MapMenuView();
+
+        mapMenuView.displayMapMenuView();
     }
 }

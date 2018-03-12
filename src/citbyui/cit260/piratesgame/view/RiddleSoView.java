@@ -45,7 +45,7 @@ public class RiddleSoView {
             Random rand = new Random();
             int value = rand.nextInt(51);
             System.out.println(" I was thrown off the ship\n"
-                    + " in a circular motion thrown over a diameter of " + value +"cm.\n"
+                    + " in a circular motion thrown over a diameter of " + value +"m.\n"
                     + " Find the distance over the circle \n"
                     + "and fast\n");
 
