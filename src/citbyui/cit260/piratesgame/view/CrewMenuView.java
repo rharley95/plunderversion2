@@ -13,10 +13,12 @@ import piratesgame.PiratesGame;
  *
  * @author madug
  */
+
   public abstract class CrewMenuView extends View {
       @Override
         
               public String[] getInputs(){
+                
         String[] inputs = new String[1];
 
             System.out.println("  K - Pick new crew member\n"
@@ -25,15 +27,16 @@ import piratesgame.PiratesGame;
                     + "  P - Pause game\n"
                     + "  Q - Quit game");
 
-                String userInput = this.getInput("You cant have a crew member.");
 
+        
+             String userInput = this.getInput("You cant have a crew member.");
             inputs[0] = userInput;
-
-
+            
         return inputs;
     }
 
-      @Override
+    @Override
+
     public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem = inputs[0].toUpperCase();
@@ -64,7 +67,7 @@ import piratesgame.PiratesGame;
         GameControl.createNewGame(PiratesGame.getPlayer());
         PickCrewView pickCrewView = new PickCrewView();
 
-        pickCrewView.displayPickCrew();
+        display();
     }
 
     private void talkCrew() {

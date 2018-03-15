@@ -14,64 +14,38 @@ import piratesgame.PiratesGame;
  *
  * @author madug
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
-    public void displayMainMenuView() {
-        boolean endView = false;
-
-        do {
-            String[] inputs = this.getInputs();
-
-            if (inputs[0].length() < 1 || inputs[0].equals("Q")) {
-                return;
-            }
-            endView = doAction(inputs);
-
-        } while (endView != true);
-    }
-
-    private String[] getInputs() {
+    public String[] getInputs() {
 
         String[] inputs = new String[1];
 
-        boolean valid = false;
-        while (valid == false) {
+        System.out.println(" N - New Game\n"
+                + "  L - Load Game\n"
+                + "  H - Help\n"
+                + "  P - Pick Crew member\n"
+                + "  R - Riddle\n"
+                + "  M - Map\n"
+                + "  T- Talk to Crew Member\n"
+                + "  Q - Quit Program");
 
-            System.out.println(" N - New Game\n"
-                    + "  L - Load Game\n"
-                    + "  H - Help\n"
-                    + "  P - Pick Crew member\n"
-                    + "  R - Riddle\n"
-                    + "  D - Daemon\n"
-                    + "  M - Map\n" 
-                    + "  T- Talk to Crew Member\n"
-                    + "  Q - Quit Program");
 
-     
-            Scanner userResponse  = new Scanner(System.in);
+        String userInput = this.getInput("You must enter non-blank value.");
 
-            String response = userResponse.nextLine();
-            String userInput = response.trim();
-
-            if (userInput.length() < 1) {
-                System.out.println("You must enter non-blank value.");
-                continue;
-            }
-
-            inputs[0] = userInput;
-            valid = true;
-        }
+        inputs[0] = userInput;
 
         return inputs;
 
     }
-     
-     private boolean doAction(String[] inputs) {
+
+
+    @Override
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
 //        menuItem = inputs[0].toUpperCase();
 
         switch (menuItem) {
-             case "N":
+            case "N":
                 startNewGame();
                 break;
             case "L":
@@ -80,7 +54,7 @@ public class MainMenuView {
             case "H":
                 getHelp();
                 break;
-             case "P":
+            case "P":
                 pickCrew();
                 break;
             case "C":
@@ -90,7 +64,7 @@ public class MainMenuView {
                 riddleSo();
                 break;
             case "T":
-            talkCrew();
+                talkCrew();
                 break;
              case "D":
              daemon();
@@ -134,26 +108,26 @@ public class MainMenuView {
     private void getCrew() {
         PickCrewView pickCrewView = new PickCrewView();
 
-        pickCrewView.displayPickCrew();
+        pickCrewView.display();
     }
 
     private void talkCrew() {
-       TalkCrewView talkCrewView = new TalkCrewView();
-       
-       talkCrewView.displayTalkCrewView();
-       
+        TalkCrewView talkCrewView = new TalkCrewView();
+
+        talkCrewView.displayTalkCrewView();
+
     }
 
     private void riddleSo() {
         RiddleSoView riddleSoView = new RiddleSoView();
-        
+
         riddleSoView.displayRiddleSoView();
     }
 
     private void pickCrew() {
-       PickCrewView pickCrewView = new PickCrewView();
-       
-       pickCrewView.displayPickCrew();
+        PickCrewView pickCrewView = new PickCrewView();
+
+        pickCrewView.display();
     }
 
     private void mapMenu() {

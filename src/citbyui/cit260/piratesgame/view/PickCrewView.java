@@ -12,24 +12,11 @@ import java.util.Scanner;
  *
  * @author madug
  */
-class PickCrewView {
+class PickCrewView extends View{
 
-    void displayPickCrew() {
-        boolean endView = false;
 
-        do {
-            String[] inputs = this.getInputs();
-
-            if (inputs[0].length() < 1 || inputs[0].equals('Q')) {
-                return;
-            }
-            endView = doAction(inputs);
-
-        } while (endView != true);
-
-    }
-
-    private String[] getInputs() {
+    @Override
+    public String[] getInputs() {
         String[] inputs = new String[1];
 
         boolean valid = false;
@@ -57,7 +44,8 @@ class PickCrewView {
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem = inputs[0].toUpperCase();
 

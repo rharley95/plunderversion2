@@ -13,12 +13,10 @@ import java.util.Scanner;
  *
  * @author rominapainter
  */
-public abstract class MapMenuView extends View{
 
-    /**
-     *
-     * @return
-     */
+public class MapMenuView extends View{
+
+  
     @Override
     public String[] getInputs() {
         String[] inputs = new String[1];
@@ -45,10 +43,10 @@ public abstract class MapMenuView extends View{
                     + "  V - Save\n"
                     + "  Q - Exit     ");
 
-              String userInput = this.getInput("You must enter a direction, unless you wish to stay idle then choose to EXIT.");
-        
+                String userInput = this.getInput("You must enter a direction, unless you wish to stay idle then choose to EXIT.");
                 inputs[0] = userInput;
-    
+
+
         return inputs;
     }
 
