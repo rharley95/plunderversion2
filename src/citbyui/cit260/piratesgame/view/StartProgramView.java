@@ -23,7 +23,6 @@ public class StartProgramView extends View {
 
     private ArrayList<StartProgramView> inputs = new ArrayList<StartProgramView>();
 
-
     public String[] getInputs() {
 
         String[] inputs = new String[1];

@@ -31,7 +31,7 @@ public class PiratesGame {
     
     public static void main(String[] args) {
        StartProgramView startProgramView = new StartProgramView();
-       startProgramView.displayStartProgramView();
+       startProgramView.display();
        
        
     }

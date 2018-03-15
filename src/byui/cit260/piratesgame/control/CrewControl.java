@@ -11,7 +11,7 @@ package byui.cit260.piratesgame.control;
  */
 public class CrewControl {
   
-    public double catchCrewMemeber(double length,double height){
+    public static double catchCrewMember(double length,double height){
 
          if (length < 1 || length > 11){
          return -1;

@@ -7,7 +7,6 @@ package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.GameControl;
 import byui.cit260.piratesgame.model.Game;
-import byui.cit260.piratesgame.model.Player;
 import java.util.Scanner;
 import piratesgame.PiratesGame;
 
@@ -30,6 +29,7 @@ public class MainMenuView extends View {
                 + "  T- Talk to Crew Member\n"
                 + "  Q - Quit Program");
 
+
         String userInput = this.getInput("You must enter non-blank value.");
 
         inputs[0] = userInput;
@@ -37,6 +37,7 @@ public class MainMenuView extends View {
         return inputs;
 
     }
+
 
     @Override
     public boolean doAction(String[] inputs) {
@@ -65,10 +66,13 @@ public class MainMenuView extends View {
             case "T":
                 talkCrew();
                 break;
-            case "M":
-                mapMenu();
+             case "D":
+             daemon();
                 break;
-
+            case "M" :
+             mapMenu();
+              break;
+                
             case "Q":
                 return true;
             default:
@@ -127,8 +131,14 @@ public class MainMenuView extends View {
     }
 
     private void mapMenu() {
-        MapMenuView mapMenuView = new MapMenuView();
+       MapMenuView mapMenuView = new MapMenuView() {};
 
         mapMenuView.display();
+    }
+
+    private void daemon() {
+        DaemonView daemonView = new DaemonView();
+        
+        daemonView.display();
     }
 }

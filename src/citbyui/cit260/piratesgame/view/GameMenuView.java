@@ -9,7 +9,7 @@ package citbyui.cit260.piratesgame.view;
  *
  * @author rominapainter
  */
-class GameMenuView {
+   class GameMenuView {
     public void displayGameMenuView() {
         
             boolean endView = false;
