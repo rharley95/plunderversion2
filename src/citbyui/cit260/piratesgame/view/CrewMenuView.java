@@ -13,29 +13,11 @@ import piratesgame.PiratesGame;
  *
  * @author madug
  */
-class CrewMenuView {
+public abstract class CrewMenuView extends View{
 
-    public void displayCrewMenuView() {
-
-        boolean endView = false;
-
-        do {
-            String[] inputs = this.getInputs();
-
-            if (inputs[0].length() < 1 || inputs[0].equals('Q')) {
-                return;
-            }
-            endView = doAction(inputs);
-
-        } while (endView != true);
-
-    }
-
-    private String[] getInputs() {
+  @Override
+    public String[] getInputs() {
         String[] inputs = new String[1];
-
-        boolean valid = false;
-        while (valid == false) {
 
             System.out.println("  K - Pick new crew member\n"
                     + "  T - Talk to a crew member\n"
@@ -43,23 +25,15 @@ class CrewMenuView {
                     + "  P - Pause game\n"
                     + "  Q - Quit game");
 
-            Scanner userResponse = new Scanner(System.in);
-            String response = userResponse.nextLine();
-            String userInput = response.trim();
-
-            if (userInput.length() < 1) {
-                System.out.println("You cant have a crew member.");
-                continue;
-            }
-
+        
+             String userInput = this.getInput("You cant have a crew member.");
             inputs[0] = userInput;
-            valid = true;
-        }
-
+            
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem = inputs[0].toUpperCase();
 
@@ -89,7 +63,7 @@ class CrewMenuView {
         GameControl.createNewGame(PiratesGame.getPlayer());
         PickCrewView pickCrewView = new PickCrewView();
 
-        pickCrewView.displayPickCrew();
+        display();
     }
 
     private void talkCrew() {

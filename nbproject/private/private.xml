@@ -3,26 +3,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Question.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/QuestionScene.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/RiddleSoView.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/CrewControl.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/StartProgramView.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/test/byui/cit260/piratesgame/control/SolveRiddleTest.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Player.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/HelpMenuView.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/CombatView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/GameControl.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/InventoryControl.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/LoadGameView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/ReturnGameView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/GameMenuView.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/InventoryMenuView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/test/byui/cit260/piratesgame/control/TexasRiddleTest.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Inventory.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/MainMenuView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/test/citbyui/cit260piratesgame/control/CrewControlTest.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/TexasRiddle.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/MapMenuView.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/SolveRiddle.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/CrewMenuView.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Question.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/QuestionScene.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/RiddleSoView.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/CrewControl.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/test/byui/cit260/piratesgame/control/SolveRiddleTest.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Player.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/TalkCrewView.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/InventoryControl.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/LoadGameView.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/PickCrewView.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/View.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/InventoryMenuView.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/CombatControl.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/MapControl.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/ViewInterface.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/citbyui/cit260/piratesgame/view/MapMenuView.java</file>
         </group>
     </open-files>
 </project-private>
