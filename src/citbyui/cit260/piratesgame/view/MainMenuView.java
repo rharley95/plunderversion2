@@ -7,7 +7,6 @@ package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.GameControl;
 import byui.cit260.piratesgame.model.Game;
-import byui.cit260.piratesgame.model.Player;
 import java.util.Scanner;
 import piratesgame.PiratesGame;
 
@@ -43,6 +42,7 @@ public class MainMenuView {
                     + "  H - Help\n"
                     + "  P - Pick Crew member\n"
                     + "  R - Riddle\n"
+                    + "  D - Daemon\n"
                     + "  M - Map\n" 
                     + "  T- Talk to Crew Member\n"
                     + "  Q - Quit Program");
@@ -65,7 +65,7 @@ public class MainMenuView {
         return inputs;
 
     }
-
+     
      private boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
 //        menuItem = inputs[0].toUpperCase();
@@ -91,6 +91,9 @@ public class MainMenuView {
                 break;
             case "T":
             talkCrew();
+                break;
+             case "D":
+             daemon();
                 break;
             case "M" :
              mapMenu();
@@ -154,8 +157,14 @@ public class MainMenuView {
     }
 
     private void mapMenu() {
-       MapMenuView mapMenuView = new MapMenuView();
+       MapMenuView mapMenuView = new MapMenuView() {};
 
-        mapMenuView.displayMapMenuView();
+        mapMenuView.display();
+    }
+
+    private void daemon() {
+        DaemonView daemonView = new DaemonView();
+        
+        daemonView.display();
     }
 }

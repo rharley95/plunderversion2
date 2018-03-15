@@ -13,28 +13,15 @@ import java.util.Scanner;
  *
  * @author rominapainter
  */
-public class MapMenuView {
+public abstract class MapMenuView extends View{
 
-    void displayMapMenuView() {
-        boolean endView = false;
-
-        do {
-            String[] inputs = this.getInputs();
-
-            if (inputs[0].length() < 1 || inputs[0].equals('Q')) {
-                return;
-            }
-            endView = doAction(inputs);
-
-        } while (endView != true);
-    }
-
-    private String[] getInputs() {
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String[] getInputs() {
         String[] inputs = new String[1];
-
-        boolean valid = false;
-        while (valid == false) {
-
             System.out.println("+--+--+--+--+--+                           \n"
                     + "|~~|~~|/\\|  |  |\n"
                     + "+--+--+--+--+--+\n"
@@ -58,22 +45,15 @@ public class MapMenuView {
                     + "  V - Save\n"
                     + "  Q - Exit     ");
 
-            Scanner userResponse = new Scanner(System.in);
-            String response = userResponse.nextLine();
-            String userInput = response.trim();
-
-            if (userInput.length() < 1) {
-                System.out.println("You must enter a direction, unless you wish to stay idle then choose to EXIT.");
-                continue;
-            }
-
-            inputs[0] = userInput;
-            valid = true;
-        }
+              String userInput = this.getInput("You must enter a direction, unless you wish to stay idle then choose to EXIT.");
+        
+                inputs[0] = userInput;
+    
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem = inputs[0].toUpperCase();
 

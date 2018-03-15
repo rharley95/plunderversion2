@@ -24,7 +24,7 @@ public class StartProgramViewTest {
     public void testDisplayStartProgramView() {
         System.out.println("displayStartProgramView");
         StartProgramView instance = new StartProgramView();
-        instance.displayStartProgramView();
+        instance.display();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

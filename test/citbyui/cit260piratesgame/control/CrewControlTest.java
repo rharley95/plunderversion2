@@ -19,7 +19,7 @@ public class CrewControlTest {
     }
 
     /**
-     * Test of catchCrewMemeber method, of class CrewControl.
+     * Test of catchCrewMember method, of class CrewControl.
      */
     @Test
     public void testCatchCrewMemeber() {
@@ -39,7 +39,7 @@ public class CrewControlTest {
         double expResult = 12;
         
         // call method
-        double result = instance.catchCrewMemeber(length, height);
+        double result = instance.catchCrewMember(length, height);
         
         //test results
         
@@ -57,7 +57,7 @@ public class CrewControlTest {
          expResult = -1;
         
         // call method
-         result = instance.catchCrewMemeber(length, height);
+         result = instance.catchCrewMember(length, height);
         
         //test results
         
@@ -78,7 +78,7 @@ public class CrewControlTest {
          expResult = -2;
         
         // call method
-        result = instance.catchCrewMemeber(length, height);
+        result = instance.catchCrewMember(length, height);
         
         //test results
         
@@ -97,7 +97,7 @@ public class CrewControlTest {
          expResult = -1;
         
         // call method
-        result = instance.catchCrewMemeber(length, height);
+        result = instance.catchCrewMember(length, height);
         
         //test results
         
@@ -115,7 +115,7 @@ public class CrewControlTest {
          expResult = 10;
         
         // call method
-        result = instance.catchCrewMemeber(length, height);
+        result = instance.catchCrewMember(length, height);
         
         //test results
         
@@ -133,7 +133,7 @@ public class CrewControlTest {
          expResult = 11;
         
         // call method
-        result = instance.catchCrewMemeber(length, height);
+        result = instance.catchCrewMember(length, height);
         
         //test results
         
@@ -151,7 +151,7 @@ public class CrewControlTest {
          expResult = 15;
         
         // call method
-        result = instance.catchCrewMemeber(length, height);
+        result = instance.catchCrewMember(length, height);
         
         //test results
         

@@ -23,22 +23,6 @@ public class StartProgramView extends View {
 
     private ArrayList<StartProgramView> inputs = new ArrayList<StartProgramView>();
 
-    public void display() {
-
-        boolean endView = false;
-
-        do {
-            String[] inputs = this.getInputs();
-
-            if (inputs[0].length() < 1 || inputs[0].equals("Q")) {
-                return;
-            }
-            endView = doAction(inputs);
-            doAction(inputs);
-
-        } while (endView != true);
-    }
-
     public String[] getInputs() {
 
         String[] inputs = new String[1];
