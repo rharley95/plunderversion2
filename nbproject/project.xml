@@ -11,8 +11,6 @@
                 <root id="test.src.dir"/>
             </test-roots>
         </data>
-        <libraries xmlns="http://www.netbeans.org/ns/ant-project-libraries/1">
-            <definitions>/Users/rominapainter/Winter2018/cit260/nblibraries.properties</definitions>
-        </libraries>
+       
     </configuration>
 </project>
