@@ -38,8 +38,8 @@ public class MapControl {
 return null;
     }
     
-    private static Scene[] createScenes() {
-        return null;
-    }
-    
+//    private static Scene[] createScenes() {
+//        return null;
+//    }
+//    
 }
