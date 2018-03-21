@@ -8,6 +8,7 @@ package byui.cit260.piratesgame.model;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -19,9 +20,7 @@ public class Inventory implements Serializable{
     private String inventoryType;
     private int quantityInStock;
     private int maxAmount;
-    private Array[] Item;
-    private Inventory inventory = new Inventory();
-//    private ResourceScene scene;
+
 
     public Inventory() {
     }
@@ -56,27 +55,13 @@ public class Inventory implements Serializable{
         this.maxAmount = requiredAmount;
     }
 
-    public Array[] getItem() {
-        return Item;
-    }
-
-    public void setItem(Array[] Item) {
-        this.Item = Item;
-    }
-
-    @Override
-    public String toString() {
-        return "Inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", maxAmount=" + maxAmount + ", Item=" + Item + ", inventory=" + inventory + '}';
-    }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 19 * hash + Objects.hashCode(this.inventoryType);
-        hash = 19 * hash + this.quantityInStock;
-        hash = 19 * hash + this.maxAmount;
-        hash = 19 * hash + Arrays.deepHashCode(this.Item);
-        hash = 19 * hash + Objects.hashCode(this.inventory);
+        hash = 29 * hash + Objects.hashCode(this.inventoryType);
+        hash = 29 * hash + this.quantityInStock;
+        hash = 29 * hash + this.maxAmount;
         return hash;
     }
 
@@ -101,21 +86,16 @@ public class Inventory implements Serializable{
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.Item, other.Item)) {
-            return false;
-        }
-        if (!Objects.equals(this.inventory, other.inventory)) {
-            return false;
-        }
         return true;
     }
 
-    
-   
+    @Override
+    public String toString() {
+        return "Inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", maxAmount=" + maxAmount;
+    }
 
     
-    
-    
+  
     
     
 }

@@ -20,11 +20,6 @@ import citbyui.cit260.piratesgame.view.StartProgramView;
 
 public class PiratesGame {
 
-
-    /**
-     * @param args the command line arguments
-     */
-    
     private static Game currentGame = null;
     private static Player player = null;
     
@@ -35,7 +30,8 @@ public class PiratesGame {
        
        
     }
-
+    
+  
     public static Game getCurrentGame() {
         return currentGame;
     }

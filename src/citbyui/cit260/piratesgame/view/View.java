@@ -34,14 +34,14 @@ public abstract class View implements ViewInterface{
     ///ask about public or private
      @Override
         public String getInput(String promptMessage){
-        System.out.println("promptMessage");
+//        System.out.println("promptMessage");
 
         String[] input = new String[1];
 
         boolean valid = false;
         while (valid == false) {
 
-            System.out.println("Enter Value");
+            System.out.println(promptMessage);
             Scanner userResponse  = new Scanner(System.in);
 
             String response = userResponse.nextLine();
@@ -56,7 +56,7 @@ public abstract class View implements ViewInterface{
             valid = true;
         }
 
-        return null;
+        return input[0];
 
     }
         

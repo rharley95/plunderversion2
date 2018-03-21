@@ -21,11 +21,22 @@ public class Game implements Serializable{
     private Player player;
     private Map map;
     private ArrayList<Actor> character = new ArrayList<Actor>();
+    private Inventory[] items;
     
     
     
     public Game() {
     }
+
+    public Inventory[] getItems() {
+        return items;
+    }
+
+    public void setItems(Inventory[] items) {
+        this.items = items;
+    }
+    
+    
 
     public Player getPlayer() {
         return player;

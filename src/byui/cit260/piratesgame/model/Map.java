@@ -24,9 +24,7 @@ public class Map implements Serializable{
 
     public Map() {
     }    
-    
-    
-    
+   
 
     public String getDescription() {
         return description;

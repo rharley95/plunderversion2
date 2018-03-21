@@ -23,10 +23,6 @@ public class MainMenuView extends View {
         System.out.println(" N - New Game\n"
                 + "  L - Load Game\n"
                 + "  H - Help\n"
-                + "  P - Pick Crew member\n"
-                + "  R - Riddle\n"
-                + "  M - Map\n"
-                + "  T- Talk to Crew Member\n"
                 + "  Q - Quit Program");
 
 
@@ -54,25 +50,6 @@ public class MainMenuView extends View {
             case "H":
                 getHelp();
                 break;
-            case "P":
-                pickCrew();
-                break;
-            case "C":
-                getCrew();
-                break;
-            case "R":
-                riddleSo();
-                break;
-            case "T":
-                talkCrew();
-                break;
-             case "D":
-             daemon();
-                break;
-            case "M" :
-             mapMenu();
-              break;
-                
             case "Q":
                 return true;
             default:
@@ -84,7 +61,6 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
 
-        Game game = new Game();
         GameControl.createNewGame(PiratesGame.getPlayer());
         GameMenuView gameMenuView = new GameMenuView();
 
