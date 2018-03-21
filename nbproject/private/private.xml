@@ -3,21 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/QuestionScene.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Player.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Gold.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/GameControl.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Weapon.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/piratesgame/PiratesGame.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/ResourceScene.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/InventoryControl.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Item.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Actor.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Map.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/MapControl.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Fish.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Inventory.java</file>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Game.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/piratesgame/PiratesGame.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/LoadGameView.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/byui/cit260/piratesgame/model/RegularScene.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/byui/cit260/piratesgame/control/GameControl.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/byui/cit260/piratesgame/model/RiddleScene.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/GameMenuView.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/test/citbyui/cit260/piratesgame/view/StartProgramViewTest.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/test/byui/cit260/piratesgame/control/TexasRiddleTest.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/byui/cit260/piratesgame/model/Game.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/test/byui/cit260/piratesgame/control/MapControlTest.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/InventoryMenuView.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/TalkCrewView.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/byui/cit260/piratesgame/control/InventoryControl.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/byui/cit260/piratesgame/model/ResourceScene.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/byui/cit260/piratesgame/control/MapControl.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/ViewInterface.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/HelpMenuView.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/View.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/test/citbyui/cit260piratesgame/control/CrewControlTest.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/StartProgramView.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/byui/cit260/piratesgame/model/QuestionScene.java</file>
+            <file>file:/C:/NetbeansProjects/plunderversion2/src/citbyui/cit260/piratesgame/view/MainMenuView.java</file>
         </group>
     </open-files>
 </project-private>
