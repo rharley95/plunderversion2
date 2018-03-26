@@ -11,7 +11,9 @@ import java.io.Serializable;
  *
  * @author madug
  */
-class Question implements Serializable{
+public class Question implements Serializable{
+    
+//    PickSailor("Would you like tlo pick the sailor?", "Yes", "No");
     
     private String questions;
     private String answer;

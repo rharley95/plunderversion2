@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 class HelpMenuView {
     
-    void displayHelpMenuView(){
+    void displayHelpMenuView (){
         boolean endView = false;
         
         do {

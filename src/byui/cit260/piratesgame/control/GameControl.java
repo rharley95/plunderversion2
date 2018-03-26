@@ -5,10 +5,8 @@
  */
 package byui.cit260.piratesgame.control;
 
-import byui.cit260.piratesgame.control.MapControl;
 import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.model.Game;
-import byui.cit260.piratesgame.model.Actor;
 import byui.cit260.piratesgame.model.Inventory;
 import byui.cit260.piratesgame.model.InventoryType;
 import byui.cit260.piratesgame.model.Map;

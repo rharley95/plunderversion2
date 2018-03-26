@@ -15,31 +15,36 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     
-    private Point row;
-    private Point column;
+    private int row;
+    private int column;
     private boolean visited;
     private int amountRemaining;
     private Actor actor;
-//    private RegularSceneType scene = new RegularSceneType();
+    private RegularScene scene;
 
     public Location() {
     }
+
+    public Location(int row, int column) {
+        this.row = row;
+        this.column = column;
+    }
     
     
 
-    public Point getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(Point row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public Point getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(Point column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
@@ -65,6 +70,14 @@ public class Location implements Serializable{
 
     public void setActor(Actor actor) {
         this.actor = actor;
+    }
+
+    public RegularScene getScene() {
+        return scene;
+    }
+
+    public void setScene(RegularScene scene) {
+        this.scene = scene;
     }
     
     

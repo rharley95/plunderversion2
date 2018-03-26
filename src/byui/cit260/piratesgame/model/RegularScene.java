@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.plunderversion2.model;
+package byui.cit260.piratesgame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -17,11 +17,17 @@ public class RegularScene implements Serializable{
  
     private String description;
     private String Scenetype;
-    private double symbol;
+    private String symbol;
     private String blocked;
     private Location location;
 
     public RegularScene() {
+    }
+
+    public RegularScene(String description, String symbol, String blocked) {
+        this.description = description;
+        this.symbol = symbol;
+        this.blocked = blocked;
     }
 
     public Location getLocation() {
@@ -50,11 +56,11 @@ public class RegularScene implements Serializable{
         this.Scenetype = Scenetype;
     }
 
-    public double getSymbol() {
+    public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(double symbol) {
+    public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
 
@@ -68,11 +74,12 @@ public class RegularScene implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.description);
-        hash = 29 * hash + Objects.hashCode(this.Scenetype);
-        hash = 29 * hash + (int) (Double.doubleToLongBits(this.symbol) ^ (Double.doubleToLongBits(this.symbol) >>> 32));
-        hash = 29 * hash + Objects.hashCode(this.blocked);
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.description);
+        hash = 37 * hash + Objects.hashCode(this.Scenetype);
+        hash = 37 * hash + Objects.hashCode(this.symbol);
+        hash = 37 * hash + Objects.hashCode(this.blocked);
+        hash = 37 * hash + Objects.hashCode(this.location);
         return hash;
     }
 
@@ -88,22 +95,29 @@ public class RegularScene implements Serializable{
             return false;
         }
         final RegularScene other = (RegularScene) obj;
-        if (Double.doubleToLongBits(this.symbol) != Double.doubleToLongBits(other.symbol)) {
-            return false;
-        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         if (!Objects.equals(this.Scenetype, other.Scenetype)) {
             return false;
         }
-        return Objects.equals(this.blocked, other.blocked);
+        if (!Objects.equals(this.symbol, other.symbol)) {
+            return false;
+        }
+        if (!Objects.equals(this.blocked, other.blocked)) {
+            return false;
+        }
+        if (this.location != other.location) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return "RegularScene{" + "description=" + description + ", Scenetype=" + Scenetype + ", symbol=" + symbol + ", blocked=" + blocked + '}';
+        return "RegularScene{" + "description=" + description + ", Scenetype=" + Scenetype + ", symbol=" + symbol + ", blocked=" + blocked + ", location=" + location + '}';
     }
+
     
     
 }

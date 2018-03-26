@@ -64,7 +64,7 @@ public class MainMenuView extends View {
         GameControl.createNewGame(PiratesGame.getPlayer());
         GameMenuView gameMenuView = new GameMenuView();
 
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 
     private void getHelp() {
