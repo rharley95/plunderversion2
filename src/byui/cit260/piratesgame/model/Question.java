@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author madug
  */
-class Question implements Serializable{
+public class Question implements Serializable{
     
     private String questions;
     private String answer;
