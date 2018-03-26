@@ -21,33 +21,27 @@ public class MapControl {
 
     public static Map createMap(int noOfRows, int noOfColumns, Inventory[] items) {
 
-        Map myMap = new Map();
-        //save the noOfRows in the map
-        myMap.setRowCount(noOfRows);
-
-        //save the noOfColumns in the map
-        myMap.setColumnCount(noOfColumns);
-
-        if (noOfRows < 0 || noOfColumns < 0) {
+        if (noOfRows < 0 || noOfColumns < 0){
             return null;
-        }
-       if (items == null || items.length < 1){
-            return null;
-        }
-        //      Assign the locations array to the map scenes = createScenes()
-        Location[][] locations = createLocations(noOfRows, noOfColumns);
-        myMap.setLocations(locations);
-        RegularScene[] scenes = createScenes();
-        Question[] questions = null;
-
-        // create locations
-//                        createQuestions()
-        assignQuestionsToScenes(questions, scenes);
-
-        //assign scenes to location    
-        assignScenesToLocations(scenes, myMap);
-
-        return myMap;
+                }
+        
+        if ( items == null || items.length < 1){
+        return null;
+            }
+        
+         Map userMap = new Map();
+         userMap.setRowCount(noOfRows);
+         userMap.setColumnCount(noOfColumns);
+  
+         Location[][] myLocations = createLocations(noOfRows, noOfColumns);
+         RegularScene[] myScenes = createScenes();
+         Question[] myQuestion = createQuestions();
+//         myScenes.assignQuestionsToScenes(Question[] questions, QuestionScene[] scenes);
+//       assignItemsToScenes()
+//        assignScenesToLocations()
+        
+                
+        return userMap;
     }
 
      private static Location[][] createLocations(int rows, int columns) {
@@ -90,6 +84,11 @@ public class MapControl {
         return scenes;
     }
     
+      private static Question[] createQuestions() {
+        return null;
+        
+    }
+      
     private static void assignQuestionsToScenes(Question[] questions, RegularScene[] scenes) {
 
         System.out.println("You have a question");
