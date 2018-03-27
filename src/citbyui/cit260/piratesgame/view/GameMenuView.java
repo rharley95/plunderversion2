@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.piratesgame.view;
 
+import byui.cit260.piratesgame.control.MapControl;
 import byui.cit260.piratesgame.model.Game;
 import byui.cit260.piratesgame.model.Location;
 import piratesgame.PiratesGame;
@@ -22,10 +23,15 @@ import piratesgame.PiratesGame;
        String menuItem = this.getInput
           ("  Game Menu\n" +
           "  M - Display Map\n"+
-          "H - Help\n"  );
-       
-          
+         
+          "H - Help\n" ); 
+                  
+                  
+        
+        inputs[0] = menuItem;
+
         return inputs;
+
     }
 
      @Override
@@ -34,7 +40,7 @@ import piratesgame.PiratesGame;
 //        menuItem = inputs[0].toUpperCase();
 
         switch (menuItem) {
-            case "D":
+            case "M":
                 this.displayMap();
                 break;
             case "L":
@@ -82,6 +88,13 @@ import piratesgame.PiratesGame;
        
        
     }
+//    private void viewMap() {
+//
+//        MapControl.displayMap(PiratesGame.getMap());
+//        GameMenuView gameMenuView = new GameMenuView();
+//
+//        gameMenuView.display();
+//    }
 
     private void loadGame() {
      LoadGameView loadGameView = new LoadGameView();
@@ -95,4 +108,13 @@ import piratesgame.PiratesGame;
 
        helpMenuView.displayHelpMenuView();
     }
+
+
+//    private void mapMenu() {
+//        MapMenuView mapMenuView = new MapMenuView();
+//        
+//        mapMenuView.display();
+//    }
+
+   
    }
