@@ -21,33 +21,29 @@ public class MapControl {
 
     public static Map createMap(int noOfRows, int noOfColumns, Inventory[] items) {
 
-        Map myMap = new Map();
-        //save the noOfRows in the map
-        myMap.setRowCount(noOfRows);
-
-        //save the noOfColumns in the map
-        myMap.setColumnCount(noOfColumns);
-
-        if (noOfRows < 0 || noOfColumns < 0) {
+        if (noOfRows < 0 || noOfColumns < 0){
             return null;
-        }
-       if (items == null || items.length < 1){
-            return null;
-        }
-        //      Assign the locations array to the map scenes = createScenes()
-        Location[][] locations = createLocations(noOfRows, noOfColumns);
-        myMap.setLocations(locations);
-        RegularScene[] scenes = createScenes();
-        Question[] questions = null;
-
-        // create locations
-//                        createQuestions()
-        assignQuestionsToScenes(questions, scenes);
-
-        //assign scenes to location    
-        assignScenesToLocations(scenes, myMap);
-
-        return myMap;
+                }
+        
+        if ( items == null || items.length < 1){
+        return null;
+            }
+        
+         Map userMap = new Map();
+         userMap.setRowCount(noOfRows);
+         userMap.setColumnCount(noOfColumns);
+    
+  
+         Location[][] myLocations = createLocations(noOfRows, noOfColumns);
+         userMap.setLocations(myLocations);
+         RegularScene[] myScenes = createScenes();
+         Question[] myQuestion = createQuestions();
+//         myScenes.assignQuestionsToScenes(Question[] questions, QuestionScene[] scenes);
+//       assignItemsToScenes()
+//        assignScenesToLocations()
+        
+                
+        return userMap;
     }
 
      private static Location[][] createLocations(int rows, int columns) {
@@ -70,26 +66,47 @@ public class MapControl {
 //    
     private static RegularScene[] createScenes() {
 
-        RegularScene[] scenes = new RegularScene[6];
+        RegularScene[] scenes = new RegularScene[15];
 
         RegularScene start = new RegularScene("This is where you would have to pick crew", "St", "You are stuck.");
         RegularScene water = new RegularScene("You are on paradise seas", "W", "You are stuck.");
         RegularScene island = new RegularScene("You are on an island", "I", "You are stuck.");
         RegularScene ship = new RegularScene("You are on your ship", "##", "You are stuck.");
         RegularScene finish = new RegularScene("Congratulations!! You just won the game", "F", "You are stuck.");
-        RegularScene islandone = new RegularScene("This is where we find Hank", "F", "You are stuck.");
-        
-        
+        RegularScene findhank = new RegularScene("This is where we find Hank", "F", "You are stuck.");
+        RegularScene battle = new RegularScene("This is where we fight the monster to get the treasure", "F", "You are stuck.");
+        RegularScene findgold = new RegularScene("You found gold...somehow floating on the ocean!", "F", "You are stuck.");
+        RegularScene islandgold = new RegularScene("You found gold...in a deserted islan.", "F", "You are stuck.");
+        RegularScene fish = new RegularScene("You found fish! But who likes raw fish?", "F", "You are stuck.");
+        RegularScene findbo = new RegularScene("You found Bo!", "F", "You are stuck.");
+        RegularScene findz = new RegularScene("You found Z! He... doesn't talk much, does he?", "F", "You are stuck.");
+        RegularScene findtexas = new RegularScene("You found Texas! HE DOESN'T SHUT UP!", "F", "You are stuck.");
+        RegularScene block = new RegularScene("Be careful! ROCKS! YOU CAN'T GO THIS WAY!", "F", "You are stuck.");
+         
+         
         scenes[SceneType.start.ordinal()] = start;
         scenes[SceneType.water.ordinal()] = water;
         scenes[SceneType.island.ordinal()] = island;
         scenes[SceneType.ship.ordinal()] = ship;
-        scenes[SceneType.islandone.ordinal()]= islandone;
+        scenes[SceneType.findhank.ordinal()]= findhank;
         scenes[SceneType.finish.ordinal()] = finish;
+        scenes[SceneType.battle.ordinal()] = battle;
+        scenes[SceneType.findgold.ordinal()] = findgold;
+        scenes[SceneType.islandgold.ordinal()] = islandgold;
+        scenes[SceneType.fish.ordinal()] = fish;
+        scenes[SceneType.findz.ordinal()] = findz;
+        scenes[SceneType.findbo.ordinal()] = findbo;
+        scenes[SceneType.findtexas.ordinal()] = findtexas;
+        scenes[SceneType.block.ordinal()] = block;
         
         return scenes;
     }
     
+      private static Question[] createQuestions() {
+        return null;
+        
+    }
+      
     private static void assignQuestionsToScenes(Question[] questions, RegularScene[] scenes) {
 
         System.out.println("You have a question");
@@ -104,33 +121,33 @@ public class MapControl {
         
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.water.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.island.ordinal()]);
-        locations[0][3].setScene(scenes[SceneType.ship.ordinal()]);
-        locations[0][4].setScene(scenes[SceneType.finish.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.findhank.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.water.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.findgold.ordinal()]);
         
-        locations[1][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[1][1].setScene(scenes[SceneType.water.ordinal()]);
-        locations[1][2].setScene(scenes[SceneType.start.ordinal()]);
-        locations[1][3].setScene(scenes[SceneType.start.ordinal()]);
-        locations[1][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.water.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.findgold.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.water.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.water.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.islandgold.ordinal()]);
         
-        locations[2][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[2][1].setScene(scenes[SceneType.start.ordinal()]);
-        locations[2][2].setScene(scenes[SceneType.start.ordinal()]);
-        locations[2][3].setScene(scenes[SceneType.start.ordinal()]);
-        locations[2][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.fish.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.findz.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.findbo.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.water.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.findtexas.ordinal()]);
         
-        locations[3][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[3][1].setScene(scenes[SceneType.start.ordinal()]);
-        locations[3][2].setScene(scenes[SceneType.start.ordinal()]);
-        locations[3][3].setScene(scenes[SceneType.start.ordinal()]);
-        locations[3][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.water.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.fish.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.water.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.battle.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.block.ordinal()]);
         
-        locations[4][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[4][1].setScene(scenes[SceneType.start.ordinal()]);
-        locations[4][2].setScene(scenes[SceneType.start.ordinal()]);
-        locations[4][3].setScene(scenes[SceneType.start.ordinal()]);
-        locations[4][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.block.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.block.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.block.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.block.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.finish.ordinal()]);
     }
 
    

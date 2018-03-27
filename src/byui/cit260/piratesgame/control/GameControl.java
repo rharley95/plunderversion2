@@ -40,6 +40,7 @@ public class GameControl implements Serializable {
         }
         Game userGame = new Game();
         PiratesGame.setPlayer(player);
+        PiratesGame.setCurrentGame(userGame);
         userGame.setPlayer(player);
 
         Inventory[] items = GameControl.createItems();

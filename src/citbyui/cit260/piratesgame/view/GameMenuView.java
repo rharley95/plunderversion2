@@ -21,15 +21,11 @@ import piratesgame.PiratesGame;
         
         String[] inputs = new String[1];
        String menuItem = this.getInput
-          ("  Game Menu\n" +
-          "  M - Display Map\n"+
-         
-          "H - Help\n" ); 
-                  
-                  
-        
-        inputs[0] = menuItem;
-
+          ("\nGame Menu\n" +
+          "M - Display Map\n"+
+          "H - Help\n"  );
+        inputs[0] = menuItem;   
+          
         return inputs;
 
     }
