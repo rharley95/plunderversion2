@@ -20,10 +20,10 @@ import piratesgame.PiratesGame;
         
         String[] inputs = new String[1];
        String menuItem = this.getInput
-          ("  Game Menu\n" +
-          "  M - Display Map\n"+
+          ("\nGame Menu\n" +
+          "M - Display Map\n"+
           "H - Help\n"  );
-       
+        inputs[0] = menuItem;   
           
         return inputs;
     }
@@ -34,7 +34,7 @@ import piratesgame.PiratesGame;
 //        menuItem = inputs[0].toUpperCase();
 
         switch (menuItem) {
-            case "D":
+            case "M":
                 this.displayMap();
                 break;
             case "L":

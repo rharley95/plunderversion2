@@ -13,7 +13,16 @@ public enum SceneType {
     start,
     water,
     island,
-    islandone,
+    findhank,
     ship,
-    finish
+    finish,
+    battle,
+    findgold,
+    islandgold,
+    fish,
+    findz,
+    findbo,
+    findtexas,
+    block
+    
 }
