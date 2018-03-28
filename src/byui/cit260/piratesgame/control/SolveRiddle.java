@@ -5,19 +5,21 @@
  */
 package byui.cit260.piratesgame.control;
 
+import byui.cit260.piratesgame.exceptions.GameControlException;
+
 /**
  *
  * @author madug
  */
 public class SolveRiddle {
 
-    public static double solveRiddle(double diameter, double guess) {
+    public static double solveRiddle(double diameter, double guess) throws GameControlException{
         if (diameter < 10 || diameter > 50) {
-            return -1;
+             throw new GameControlException("That diameter seems to be wrong, try again!");
         }
 
         if (guess < 16 || guess > 79) {
-            return -2;
+             throw new GameControlException("Try another guess, mate!");
         }
 
         double theorem = (Math.PI * diameter) / 2;

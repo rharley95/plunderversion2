@@ -5,6 +5,7 @@
  */
 package byui.cit260.piratesgame.control;
 
+import byui.cit260.piratesgame.exceptions.GameControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class SolveRiddleTest {
      * Test of solveRiddle method, of class SolveRiddle.
      */
     @Test
-    public void testSolveRiddle() {
+    public void testSolveRiddle() throws GameControlException {
         
         System.out.println("solveRiddle");
         

@@ -6,7 +6,10 @@
 package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.GameControl;
+import byui.cit260.piratesgame.exceptions.GameControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import piratesgame.PiratesGame;
 
 /**
@@ -43,7 +46,13 @@ import piratesgame.PiratesGame;
 
         switch (menuItem) {
             case "K":
+        {
+            try {
                 pickCrew();
+            } catch (GameControlException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
                 break;
             case "T":
                 talkCrew();
@@ -63,7 +72,7 @@ import piratesgame.PiratesGame;
         return false;
     }
 
-    private void pickCrew() {
+    private void pickCrew() throws GameControlException {
         GameControl.createNewGame(PiratesGame.getPlayer());
         PickCrewView pickCrewView = new PickCrewView();
 
