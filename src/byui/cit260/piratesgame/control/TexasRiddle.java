@@ -5,15 +5,17 @@
  */
 package byui.cit260.piratesgame.control;
 
+import byui.cit260.piratesgame.exceptions.GameControlException;
+
 /**
  *
  * @author rominapainter
  */
 public class TexasRiddle {
-    public double TexasRiddle(double answer){
+    public double TexasRiddle(double answer) throws GameControlException{
 
           if (answer != 6000){
-         return -1;
+          throw new GameControlException("Wrong volume, try again!");
         }
           
           double width = 10;

@@ -5,6 +5,7 @@
  */
 package byui.cit260.piratesgame.control;
 
+import byui.cit260.piratesgame.exceptions.GameControlException;
 import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.model.Game;
 import byui.cit260.piratesgame.model.Inventory;
@@ -32,12 +33,14 @@ public class GameControl implements Serializable {
         return player;
     }
 
-    public static int createNewGame(Player player) {
-        System.out.println("Welcome to a new game!");
-
+    public static void createNewGame(Player player) throws GameControlException {
+        
         if (player == null) {
-            return -1;
+            throw new GameControlException("Something went wrong.");
         }
+        
+        System.out.println("Welcome to a new game!");
+        
         Game userGame = new Game();
         PiratesGame.setPlayer(player);
         PiratesGame.setCurrentGame(userGame);
@@ -48,18 +51,19 @@ public class GameControl implements Serializable {
 
         Map myMap = MapControl.createMap(5, 5, items);
         if (myMap == null) {
-            return -1;
+            throw new GameControlException("Something went wrong.");
         }
 
         userGame.setMap(myMap);
 
-        return 1;
     }
+    
 
     public static void saveGame(Player player) {
         System.out.println("You have saved your game.");
 
     }
+    
 
     public static Inventory[] createItems() {
         

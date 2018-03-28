@@ -10,8 +10,24 @@ package byui.cit260.piratesgame.control;
  * @author rominapainter
  */
 public class CombatControl {
-    public static boolean attackMonster(){
-        
-        return true;
-    }
+  public static double monsterRiddle(double diameter, double guess) {
+        if (diameter < 10 || diameter > 50) {
+            return -1;
+        }
+
+        if (guess < 16 || guess > 79) {
+            return -2;
+        }
+
+        double theorem = (Math.PI * diameter) / 2;
+
+        double distance = Math.round(theorem);
+
+        if (guess == distance) {
+
+            return distance;
+
+         }
+        return 0;
+     }
 }

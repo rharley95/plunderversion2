@@ -5,6 +5,7 @@
  */
 package byui.cit260.piratesgame.control;
 
+import byui.cit260.piratesgame.exceptions.GameControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class TexasRiddleTest {
      * Test of TexasRiddle method, of class TexasRiddle.
      */
     @Test
-    public void testTexasRiddle() {
+    public void testTexasRiddle() throws GameControlException {
         System.out.println("TexasRiddle");
         double answer = 6000;
         TexasRiddle instance = new TexasRiddle();
@@ -35,7 +36,7 @@ public class TexasRiddleTest {
      * Test of TexasRiddle method, of class TexasRiddle.
      */
     @Test
-    public void testTexasRiddleTwo() {
+    public void testTexasRiddleTwo() throws GameControlException {
         System.out.println("TexasRiddle");
         double answer = 6001;
         TexasRiddle instance = new TexasRiddle();
@@ -46,7 +47,7 @@ public class TexasRiddleTest {
     }
     
      @Test
-    public void testTexasRiddleThree() {
+    public void testTexasRiddleThree() throws GameControlException {
         System.out.println("TexasRiddle");
         double answer = 5999;
         TexasRiddle instance = new TexasRiddle();

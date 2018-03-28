@@ -6,8 +6,11 @@
 package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.GameControl;
+import byui.cit260.piratesgame.exceptions.GameControlException;
 import byui.cit260.piratesgame.model.Game;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import piratesgame.PiratesGame;
 
 /**
@@ -42,7 +45,13 @@ public class MainMenuView extends View {
 
         switch (menuItem) {
             case "N":
+        {
+            try {
                 startNewGame();
+            } catch (GameControlException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
                 break;
             case "L":
                 loadGame();
@@ -59,7 +68,7 @@ public class MainMenuView extends View {
         return false;
     }
 
-    private void startNewGame() {
+    private void startNewGame() throws GameControlException {
 
         GameControl.createNewGame(PiratesGame.getPlayer());
         GameMenuView gameMenuView = new GameMenuView();

@@ -40,7 +40,7 @@ public class DaemonView extends View {
       
       //call control method
       
-     double distance = CrewControl.catchCrewMember( length, height);
+     double distance = CrewControl.catchCrewMember(length, height);
       if (distance == -1){
       System.out.println("Invalid length");
        return false;}
