@@ -5,12 +5,19 @@
  */
 package byui.cit260.piratesgame.control;
 
+import byui.cit260.piratesgame.exceptions.GameControlException;
+import byui.cit260.piratesgame.exceptions.MapControlException;
+import byui.cit260.piratesgame.model.Actor;
 import byui.cit260.piratesgame.model.Inventory;
 import byui.cit260.piratesgame.model.Location;
 import byui.cit260.piratesgame.model.Map;
+import byui.cit260.piratesgame.model.Game;
+import byui.cit260.piratesgame.control.GameControl;
 import byui.cit260.piratesgame.model.Question;
 import byui.cit260.piratesgame.model.SceneType;
 import byui.cit260.piratesgame.model.RegularScene;
+import java.awt.Point;
+import piratesgame.PiratesGame;
 
 
 /**
@@ -150,6 +157,31 @@ public class MapControl {
         locations[4][4].setScene(scenes[SceneType.finish.ordinal()]);
     }
 
-   
+    
+    public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException {
+        
+        if (actor == null){
+        throw new MapControlException("Something went wrong.");
+                }
+        
+        Game game = PiratesGame.getCurrentGame();
+        Map map = game.getMap(); 
+        Location[][] locations = map.getLocations();
+                 
+        if (newRow < 1 || newRow > map.getRowCount() ||
+            newColumn < 1 || newColumn > map.getColumnCount()){
+            throw new MapControlException("You are trying to move outside the map! That is not allowed, sorry.");         
+        }
+
+          Point oldCoordinates = actor.getCoordinates();
+          Point newCoordinates = new Point(newRow, newColumn);
+          Location oldLocation = locations[oldCoordinates.x][oldCoordinates.y];
+          Location newLocation = locations[newCoordinates.x][newCoordinates.y];
+          actor.setCoordinates(newCoordinates);
+          oldLocation.setActor(null);
+          newLocation.setActor(actor);
+
+        return newLocation;
+   }
 
 }

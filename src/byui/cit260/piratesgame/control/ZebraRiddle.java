@@ -11,17 +11,17 @@ import byui.cit260.piratesgame.exceptions.GameControlException;
  *
  * @author rominapainter
  */
-public class CombatControl {
-  public String monsterRiddle(String riddle, String userAnswer) throws GameControlException{
+public class ZebraRiddle {
+    public String zebraRiddle(String riddle, String userAnswer) throws GameControlException{
       
-       String answer = "river";
+       String answer = "fish";
        
         if (userAnswer != answer) {
             throw new GameControlException("That seems to be the wrong answer! Try a new answer! So easy!");
         }
          
         String celebration = "Good Job!!";
-        riddle = "What has a bed but doesn’t sleep and a mouth but never eats?";
+        riddle = "....What is 2 + 2....";
 
 
         if (userAnswer == answer) {

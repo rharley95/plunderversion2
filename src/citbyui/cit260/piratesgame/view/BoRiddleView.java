@@ -10,7 +10,7 @@ import byui.cit260.piratesgame.control.CrewControl;
  *
  * @author madug
  */
-public class DaemonView extends View {
+public class BoRiddleView extends View {
 
     @Override
     public String[] getInputs() {
