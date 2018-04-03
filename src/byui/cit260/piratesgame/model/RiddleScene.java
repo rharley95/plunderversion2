@@ -10,24 +10,46 @@ import java.util.Objects;
  *
  * @author rominapainter
  */
-public class RiddleScene implements Serializable{
+public class RiddleScene extends RegularScene{
     
     private double riddleType;
     private String fail;
     private String answer;
     private String riddle;
-    private Actor actorType;
+
+    public RiddleScene(double riddleType, String fail, String answer, String riddle) {
+        this.riddleType = riddleType;
+        this.fail = fail;
+        this.answer = answer;
+        this.riddle = riddle;
+    }
+    
 
     public RiddleScene() {
     }
 
-    public Actor getActorType() {
-        return actorType;
+    /**
+     *
+     * @param riddleType
+     * @param fail
+     * @param answer
+     * @param riddle
+     * @param description
+     * @param symbol
+     * @param blocked
+     */
+    public RiddleScene(double riddleType, String fail, String answer, String riddle, String description, String symbol, String blocked) {
+        super(description, symbol, blocked);
+        this.riddleType = riddleType;
+        this.fail = fail;
+        this.answer = answer;
+        this.riddle = riddle;
     }
 
-    public void setActorType(Actor actorType) {
-        this.actorType = actorType;
+    public RiddleScene(String double_riddleType_String_fail_String_answ) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
     
  
 

@@ -11,13 +11,19 @@ import java.io.Serializable;
  *
  * @author madug
  */
-public class ResourceScene implements Serializable {
+public class ResourceScene extends RegularScene {
     
     private String attribute;
     private double amount;
-    private ResourceScene resourcescene;
+    
 
     public ResourceScene() {
+    }
+
+    public ResourceScene(String attribute, double amount, String description, String symbol, String blocked) {
+        super(description, symbol, blocked);
+        this.attribute = attribute;
+        this.amount = amount;
     }
     
     

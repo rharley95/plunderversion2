@@ -5,6 +5,9 @@
  */
 package citbyui.cit260.piratesgame.view;
 import byui.cit260.piratesgame.control.CrewControl;
+import byui.cit260.piratesgame.exceptions.GameControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,13 +37,19 @@ public class DaemonView extends View {
     public boolean doAction(String[] inputs) {
         
         //call the two inputs
-        
+       
       double length = Double.parseDouble(inputs[0]); 
       double height = Double.parseDouble(inputs[1]);
       
       //call control method
       
-     double distance = CrewControl.catchCrewMember(length, height);
+     double distance = 0;
+        try {
+            distance = CrewControl.catchCrewMember(length, height);
+            
+        } catch (byui.cit260.piratesgame.exceptions.NumberFormatException ex) {
+            System.out.println(ex.getMessage());
+        }
       if (distance == -1){
       System.out.println("Invalid length");
        return false;}

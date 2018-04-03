@@ -11,6 +11,8 @@ import byui.cit260.piratesgame.model.Map;
 import byui.cit260.piratesgame.model.Question;
 import byui.cit260.piratesgame.model.SceneType;
 import byui.cit260.piratesgame.model.RegularScene;
+import byui.cit260.piratesgame.model.ResourceScene;
+import byui.cit260.piratesgame.model.RiddleScene;
 
 
 /**
@@ -73,16 +75,14 @@ public class MapControl {
         RegularScene island = new RegularScene("You are on an island", "I", "You are stuck.");
         RegularScene ship = new RegularScene("You are on your ship", "##", "You are stuck.");
         RegularScene finish = new RegularScene("Congratulations!! You just won the game", "F", "You are stuck.");
-        RegularScene findhank = new RegularScene("This is where we find Hank", "F", "You are stuck.");
         RegularScene battle = new RegularScene("This is where we fight the monster to get the treasure", "F", "You are stuck.");
-        RegularScene findgold = new RegularScene("You found gold...somehow floating on the ocean!", "F", "You are stuck.");
         RegularScene islandgold = new RegularScene("You found gold...in a deserted islan.", "F", "You are stuck.");
-        RegularScene fish = new RegularScene("You found fish! But who likes raw fish?", "F", "You are stuck.");
-        RegularScene findbo = new RegularScene("You found Bo!", "F", "You are stuck.");
-        RegularScene findz = new RegularScene("You found Z! He... doesn't talk much, does he?", "F", "You are stuck.");
-        RegularScene findtexas = new RegularScene("You found Texas! HE DOESN'T SHUT UP!", "F", "You are stuck.");
         RegularScene block = new RegularScene("Be careful! ROCKS! YOU CAN'T GO THIS WAY!", "F", "You are stuck.");
-         
+        RiddleScene findtexas = new RiddleScene(23.56,"fail", "you have passed", "riddle", "Be careful! ROCKS! YOU CAN'T GO THIS WAY!", "F", "You are stuck.");
+        RiddleScene findhank = new RiddleScene(23.56,"fail", "you have passed", "riddle", "Be careful! ROCKS! YOU CAN'T GO THIS WAY!", "F", "You are stuck.");
+        RiddleScene findbo = new RiddleScene(23.56,"fail", "you have passed", "riddle", "Be careful! ROCKS! YOU CAN'T GO THIS WAY!", "F", "You are stuck.");
+        ResourceScene fish = new ResourceScene("hjghj", 5, "Be careful! ROCKS! YOU CAN'T GO THIS WAY!", "F", "You are stuck.");
+        ResourceScene findgold= new ResourceScene("hjghj", 5, "Be careful! ROCKS! YOU CAN'T GO THIS WAY!", "F", "You are stuck.");
          
         scenes[SceneType.start.ordinal()] = start;
         scenes[SceneType.water.ordinal()] = water;
@@ -94,9 +94,8 @@ public class MapControl {
         scenes[SceneType.findgold.ordinal()] = findgold;
         scenes[SceneType.islandgold.ordinal()] = islandgold;
         scenes[SceneType.fish.ordinal()] = fish;
-        scenes[SceneType.findz.ordinal()] = findz;
-        scenes[SceneType.findbo.ordinal()] = findbo;
         scenes[SceneType.findtexas.ordinal()] = findtexas;
+        scenes[SceneType.findbo.ordinal()] = findbo;
         scenes[SceneType.block.ordinal()] = block;
         
         return scenes;

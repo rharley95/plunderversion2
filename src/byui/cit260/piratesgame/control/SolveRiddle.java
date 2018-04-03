@@ -13,13 +13,13 @@ import byui.cit260.piratesgame.exceptions.GameControlException;
  */
 public class SolveRiddle {
 
-    public static double solveRiddle(double diameter, double guess) throws GameControlException{
+    public static double solveRiddle(double diameter, double guess) {
         if (diameter < 10 || diameter > 50) {
-             throw new GameControlException("That diameter seems to be wrong, try again!");
+             
         }
 
         if (guess < 16 || guess > 79) {
-             throw new GameControlException("Try another guess, mate!");
+             
         }
 
         double theorem = (Math.PI * diameter) / 2;

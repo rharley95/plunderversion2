@@ -6,9 +6,13 @@
 package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.SolveRiddle;
+import byui.cit260.piratesgame.exceptions.GameControlException;
+import byui.cit260.piratesgame.exceptions.NumberFormatException;
 import java.util.Random;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,12 +27,16 @@ public class RiddleSoView {
         boolean endView = false;
 
         do {
-            String[] inputs = this.getInputs();
-
-            if (inputs[0].length() < 1 || inputs[0].equals("Q")) {
-                return;
+            try {
+                String[] inputs = this.getInputs();
+                
+                if (inputs[0].length() < 1 || inputs[0].equals("Q")) {
+                    return;
+                }
+                endView = doAction(inputs);
+            } catch (NumberFormatException ex) {
+                System.out.println(ex.getMessage());
             }
-            endView = doAction(inputs);
 
         } while (endView != true);
         
@@ -64,10 +72,11 @@ public class RiddleSoView {
 
     }
 
-    private boolean doAction(String[] inputs) {
+    private boolean doAction(String[] inputs) throws NumberFormatException {
         double userResponse = Double.parseDouble(inputs[0]);
         
-        double response = SolveRiddle.solveRiddle(25, userResponse );
+        double response = 0;
+        response = SolveRiddle.solveRiddle(25, userResponse );
     
         double diameter = Double.parseDouble(inputs[1]);
                 
