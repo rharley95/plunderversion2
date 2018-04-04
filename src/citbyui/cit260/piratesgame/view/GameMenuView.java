@@ -61,7 +61,7 @@ import piratesgame.PiratesGame;
                 pickCrew();
                 break;
             case "D":
-                daemon();
+                boriddle();
                 break;
             case "R":
                 riddleSo();
@@ -157,10 +157,14 @@ private void getCrew() {
 //        mapMenuView.display();
 //    }
 
-    private void daemon() {
-        DaemonView daemonView = new DaemonView();
+    private void BoRiddle() {
         
-        daemonView.display();
+    }
+
+    private void boriddle() {
+        BoRiddle boRiddle = new BoRiddle();
+        
+        boRiddle.display();
     }
 
    

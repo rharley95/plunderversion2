@@ -6,7 +6,11 @@
 package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.model.Actor;
+import byui.cit260.piratesgame.model.Location;
 import byui.cit260.piratesgame.model.Player;
+import byui.cit260.piratesgame.control.MapControl;
+import byui.cit260.piratesgame.exceptions.MapControlException;
+import byui.cit260.piratesgame.exceptions.MapControlException;
 import java.util.Scanner;
 import piratesgame.PiratesGame;
 
@@ -17,21 +21,22 @@ import piratesgame.PiratesGame;
 public abstract class MoveActorView extends View {
 
     public String getInputs(String promptMessage) {
-       
-        String[] inputs = new String[4];
 
+//        String[] inputs = new String[3];
 //        Print instructions to move an actor
-        System.out.println("Move the actor");
-
+//        System.out.println("Move the actor");
 //        System.out.println("promptMessage");
-
-        String[] input = new String[1];
+        String[] input = new String[3];
+        System.out.println("Move the actor to your choice of location");
 
         boolean valid = false;
         while (valid == false) {
 
-            System.out.println("N,S,E,W");
-            Scanner userResponse  = new Scanner(System.in);
+            System.out.println("N - Move North\n"
+                    + "S - Move South\n"
+                    + "E - Move East\n"
+                    + "W - Move West\n");
+            Scanner userResponse = new Scanner(System.in);
 
             String response = userResponse.nextLine();
             String userInput = response.trim();
@@ -47,41 +52,33 @@ public abstract class MoveActorView extends View {
 
         return input[0];
     }
-}
 
-//    @Override
-//    public boolean doAction(String[] inputs) {
-//       //        get first value in inputs array
-//
-//        String row = inputs[0];
-////      get second value in inputs array
-//        String column = inputs[1];
-//       
-//        try {
-//            Integer parseInt = Integer.parseInt(inputs);
-//        } catch   NumberFormatException {
-//       System.out.Println("The row and column must be a number");
-//                       
-//                    }
-//        return false;
-//        }
-//        Player player = PiratesGame.getPlayer();
-//         Actor actor = Player.getActor();
-//
-//        try {
-//            newLocation = moveActor(actor, direction);
-//        } catch  MapControlException { 
-//            
-//         System.out.Println("error passed with the exception");
-//                        
-//         return false;
-////   the description of the scene A the newLocation
-//        System.out.Println("");
-//
-//        return true;
-//                    }
-//        }
-//        
-//
-//    
-//    
+    @Override
+    //it was private at first
+    public boolean doAction(String[] inputs) {
+// row = get first value in inputs array
+
+        String row = inputs[0];
+        String column = inputs[1];
+
+        try {
+            int intRow = Integer.parseInt(row);
+            int intColumn = Integer.parseInt(column);
+        } catch (NumberFormatException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+
+        Player player = PiratesGame.getPlayer();
+        Actor actor = player.getActor();
+
+        try {
+            Location newLocation = moveActor(actor, row, column);
+        } catch (MapControlException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+        System.out.println("Description of this scene goes here");
+        return true;
+    }
+}
