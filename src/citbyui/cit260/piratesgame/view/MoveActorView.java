@@ -10,7 +10,7 @@ import byui.cit260.piratesgame.model.Location;
 import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.control.MapControl;
 import byui.cit260.piratesgame.exceptions.MapControlException;
-import byui.cit260.piratesgame.exceptions.MapControlException;
+import java.awt.Point;
 import java.util.Scanner;
 import piratesgame.PiratesGame;
 
@@ -35,7 +35,8 @@ public abstract class MoveActorView extends View {
             System.out.println("N - Move North\n"
                     + "S - Move South\n"
                     + "E - Move East\n"
-                    + "W - Move West\n");
+                    + "W - Move West\n"
+                     + "Q - Quit\n");
             Scanner userResponse = new Scanner(System.in);
 
             String response = userResponse.nextLine();
@@ -57,13 +58,17 @@ public abstract class MoveActorView extends View {
     //it was private at first
     public boolean doAction(String[] inputs) {
 // row = get first value in inputs array
-
-        String row = inputs[0];
-        String column = inputs[1];
-
+          
+          String row = inputs[0];
+          String column = inputs[1];
+          
+          
+       
+      
         try {
             int intRow = Integer.parseInt(row);
             int intColumn = Integer.parseInt(column);
+            Point distance = new Point(intRow, intColumn);
         } catch (NumberFormatException ex) {
             System.out.println(ex.getMessage());
             return false;
@@ -71,6 +76,7 @@ public abstract class MoveActorView extends View {
 
         Player player = PiratesGame.getPlayer();
         Actor actor = player.getActor();
+        
 
         try {
             Location newLocation = moveActor(actor, row, column);
@@ -78,7 +84,44 @@ public abstract class MoveActorView extends View {
             System.out.println(ex.getMessage());
             return false;
         }
+        
+             switch (distance) {
+            case "N":
+                moveSouth();
+                break;
+            case "S":
+                moveSouth();
+                break;
+            case "E":
+                moveEast();
+                break;
+            case "W":
+                moveWest();
+                break;
+            case "Q":
+                return true;
+            default:
+                System.out.println("Please enter a valid option.");
+        }
+             
         System.out.println("Description of this scene goes here");
-        return true;
+           return true;
     }
+
+    private void moveNorth() {
+        
+    }
+
+    private void moveSouth() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void moveEast() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void moveWest() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+     
 }

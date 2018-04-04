@@ -157,14 +157,14 @@ private void getCrew() {
 //        mapMenuView.display();
 //    }
 
-    private void BoRiddle() {
-        
-    }
+//    void boriddle() {
+//        BoRiddle boRiddle = new BoRiddle();
+//        
+//        boRiddle.display();
+//    }
 
     private void boriddle() {
-        BoRiddle boRiddle = new BoRiddle();
-        
-        boRiddle.display();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
