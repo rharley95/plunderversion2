@@ -122,7 +122,7 @@ public class MainMenuView extends View {
     }
 
     private void daemon() {
-        DaemonView daemonView = new DaemonView();
+        BoRiddleView daemonView = new BoRiddleView();
         
         daemonView.display();
     }

@@ -13,7 +13,10 @@ import byui.cit260.piratesgame.exceptions.GameControlException;
  */
 public class SolveRiddle {
 
-    public static double solveRiddle(double diameter, double guess) {
+
+    public static double solveRiddle(double diameter, double guess) throws GameControlException{
+        System.out.println("dnfjksdnfsd");
+
         if (diameter < 10 || diameter > 50) {
              
         }
@@ -28,7 +31,7 @@ public class SolveRiddle {
 
         if (guess == distance) {
 
-            return distance;
+            System.out.println("dnfjksdnfsd");
 
          }
         return 0;

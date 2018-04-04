@@ -17,7 +17,7 @@ public class Map implements Serializable{
     private String description;
     private double rowCount;
     private double columnCount;
-    private double currentRow;
+    public double currentRow;
     private double currentColumn;
     private Location[][] locations = new Location[0][0];
     private Game game = new Game();
