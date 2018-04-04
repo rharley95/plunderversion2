@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.piratesgame.view;
 
+import byui.cit260.piratesgame.control.MapControl;
 import byui.cit260.piratesgame.model.Game;
 import byui.cit260.piratesgame.model.Location;
 import piratesgame.PiratesGame;
@@ -22,10 +23,17 @@ import piratesgame.PiratesGame;
        String menuItem = this.getInput
           ("\nGame Menu\n" +
           "M - Display Map\n"+
+            "C - Get Crew\n"+
+           "T - Talk to Crew\n"+
+            "P - Pick Crew\n"+
+            "D - ridddle\n"+
+            "R - Another riddle\n"+
+                  
           "H - Help\n"  );
         inputs[0] = menuItem;   
           
         return inputs;
+
     }
 
      @Override
@@ -42,6 +50,21 @@ import piratesgame.PiratesGame;
                 break;
             case "H":
                 helpMenu();
+                break;
+            case "C":
+                getCrew();
+                break;
+            case "T":
+                talkCrew();
+                break;
+            case "P":
+                pickCrew();
+                break;
+            case "D":
+                daemon();
+                break;
+            case "R":
+                riddleSo();
                 break;
             case "Q":
                 return true;
@@ -82,6 +105,13 @@ import piratesgame.PiratesGame;
        
        
     }
+//    private void viewMap() {
+//
+//        MapControl.displayMap(PiratesGame.getMap());
+//        GameMenuView gameMenuView = new GameMenuView();
+//
+//        gameMenuView.display();
+//    }
 
     private void loadGame() {
      LoadGameView loadGameView = new LoadGameView();
@@ -95,4 +125,43 @@ import piratesgame.PiratesGame;
 
        helpMenuView.displayHelpMenuView();
     }
+
+private void getCrew() {
+        PickCrewView pickCrewView = new PickCrewView();
+
+        pickCrewView.display();
+    }
+
+    private void talkCrew() {
+        TalkCrewView talkCrewView = new TalkCrewView();
+
+        talkCrewView.displayTalkCrewView();
+
+    }
+
+    private void riddleSo() {
+        RiddleSoView riddleSoView = new RiddleSoView();
+
+        riddleSoView.displayRiddleSoView();
+    }
+
+    private void pickCrew() {
+        PickCrewView pickCrewView = new PickCrewView();
+
+        pickCrewView.display();
+    }
+
+//    private void mapMenu() {
+//       MapMenuView mapMenuView = new MapMenuView() {};
+//
+//        mapMenuView.display();
+//    }
+
+    private void daemon() {
+        DaemonView daemonView = new DaemonView();
+        
+        daemonView.display();
+    }
+
+   
    }
