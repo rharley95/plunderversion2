@@ -3,7 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/exceptions/MapControlException.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Actor.java</file>
+            <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Location.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/model/Map.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/MapControl.java</file>
             <file>file:/Users/rominapainter/NetBeansProjects/piratesgame/src/byui/cit260/piratesgame/control/GameControl.java</file>
