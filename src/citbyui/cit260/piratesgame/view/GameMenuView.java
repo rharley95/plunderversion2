@@ -23,10 +23,11 @@ import piratesgame.PiratesGame;
        String menuItem = this.getInput
           ("\nGame Menu\n" +
           "M - Display Map\n"+
+           "W - Move Menu\n"+
             "C - Get Crew\n"+
            "T - Talk to Crew\n"+
             "P - Pick Crew\n"+
-            "D - ridddle\n"+
+            "D - riddle\n"+
             "R - Another riddle\n"+
                   
           "H - Help\n"  );
@@ -44,6 +45,9 @@ import piratesgame.PiratesGame;
         switch (menuItem) {
             case "M":
                 this.displayMap();
+                break;
+            case "W":
+                moveActor();
                 break;
             case "L":
                 loadGame();
@@ -165,6 +169,12 @@ private void getCrew() {
 
     private void boriddle() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void moveActor() {
+        MoveActorView moveActor = new MoveActorView() {};
+
+        moveActor.display();
     }
 
    
