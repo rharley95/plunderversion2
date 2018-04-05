@@ -6,8 +6,8 @@
 package byui.cit260.piratesgame.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 /**
@@ -20,7 +20,7 @@ public class Player implements Serializable{
     private String name;
     private double bestTime;
     private String role;
-    private String Actor;
+    private Actor actor;
     private ArrayList<Game> games = new ArrayList<>();
     private ArrayList<Actor> character = new ArrayList<>();
 
@@ -72,28 +72,23 @@ public class Player implements Serializable{
         this.character = character;
     }
 
-    public String getActor() {
-        return Actor;
+    public Actor getActor() {
+        return actor;
     }
 
-    public void setActor(String Actor) {
-        this.Actor = Actor;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + ", role=" + role + ", Actor=" + Actor + ", games=" + games + ", character=" + character + '}';
+    public void setActor(Actor actor) {
+        this.actor = actor;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.name);
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
-        hash = 47 * hash + Objects.hashCode(this.role);
-        hash = 47 * hash + Objects.hashCode(this.Actor);
-        hash = 47 * hash + Objects.hashCode(this.games);
-        hash = 47 * hash + Objects.hashCode(this.character);
+        int hash = 5;
+        hash = 83 * hash + Objects.hashCode(this.name);
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        hash = 83 * hash + Objects.hashCode(this.role);
+        hash = 83 * hash + Objects.hashCode(this.actor);
+        hash = 83 * hash + Objects.hashCode(this.games);
+        hash = 83 * hash + Objects.hashCode(this.character);
         return hash;
     }
 
@@ -118,7 +113,7 @@ public class Player implements Serializable{
         if (!Objects.equals(this.role, other.role)) {
             return false;
         }
-        if (!Objects.equals(this.Actor, other.Actor)) {
+        if (this.actor != other.actor) {
             return false;
         }
         if (!Objects.equals(this.games, other.games)) {
@@ -129,4 +124,13 @@ public class Player implements Serializable{
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + ", role=" + role + ", actor=" + actor + ", games=" + games + ", character=" + character + '}';
+    }
+    
+    
+
+    
 }

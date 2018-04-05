@@ -159,7 +159,6 @@ public class MapControl {
 
     
     public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException {
-        
         if (actor == null){
         throw new MapControlException("Something went wrong.");
                 }

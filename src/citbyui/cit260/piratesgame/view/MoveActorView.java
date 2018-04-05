@@ -11,7 +11,6 @@ import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.control.MapControl;
 import byui.cit260.piratesgame.exceptions.MapControlException;
 import java.awt.Point;
-import java.util.Scanner;
 import piratesgame.PiratesGame;
 
 /**
@@ -20,108 +19,76 @@ import piratesgame.PiratesGame;
  */
 public abstract class MoveActorView extends View {
 
-    public String getInputs(String promptMessage) {
+    @Override
+    public String[] getInputs() {
 
-//        String[] inputs = new String[3];
-//        Print instructions to move an actor
-//        System.out.println("Move the actor");
-//        System.out.println("promptMessage");
-        String[] input = new String[3];
+        String[] inputs = new String[1];
         System.out.println("Move the actor to your choice of location");
 
-        boolean valid = false;
-        while (valid == false) {
+        System.out.println("N - Move North\n"
+                + "S - Move South\n"
+                + "E - Move East\n"
+                + "W - Move West\n"
+                + "Q - Quit\n");
 
-            System.out.println("N - Move North\n"
-                    + "S - Move South\n"
-                    + "E - Move East\n"
-                    + "W - Move West\n"
-                     + "Q - Quit\n");
-            Scanner userResponse = new Scanner(System.in);
+        String direction = this.getInput("Enter a direction");
+        inputs[0] = direction;
 
-            String response = userResponse.nextLine();
-            String userInput = response.trim();
-
-            if (userInput.length() < 1) {
-                System.out.println("You must enter non-blank value.");
-                continue;
-            }
-
-            input[0] = userInput;
-            valid = true;
-        }
-
-        return input[0];
+        return inputs;
     }
 
     @Override
     //it was private at first
     public boolean doAction(String[] inputs) {
 // row = get first value in inputs array
-          
-          String row = inputs[0];
-          String column = inputs[1];
-          
-          
-       
-      
-        try {
-            int intRow = Integer.parseInt(row);
-            int intColumn = Integer.parseInt(column);
-            Point distance = new Point(intRow, intColumn);
-        } catch (NumberFormatException ex) {
-            System.out.println(ex.getMessage());
-            return false;
-        }
 
-        Player player = PiratesGame.getPlayer();
-        Actor actor = player.getActor();
-        
+        @SuppressWarnings("UnusedAssignment")
+        int newRow = 0;
+        int newColumn = 0;
 
-        try {
-            Location newLocation = moveActor(actor, row, column);
-        } catch (MapControlException ex) {
-            System.out.println(ex.getMessage());
-            return false;
-        }
-        
-             switch (distance) {
+        Point oldCoordinates = PiratesGame.getPlayer().getActor().getCoordinates();
+
+        int oldRow = oldCoordinates.x;
+        int oldColumn = oldCoordinates.y;
+
+        switch (inputs[0]) {
             case "N":
-                moveSouth();
+                newRow = oldRow;
+                newColumn = oldColumn - 1;
                 break;
             case "S":
-                moveSouth();
+                newRow = oldRow;
+                newColumn = oldColumn + 1;
                 break;
             case "E":
-                moveEast();
+                newColumn = oldColumn;
+                newRow = oldRow + 1;
                 break;
             case "W":
-                moveWest();
+                newColumn = oldColumn;
+                newRow = oldRow - 1;
                 break;
             case "Q":
                 return true;
             default:
                 System.out.println("Please enter a valid option.");
+                return false;
         }
-             
-        System.out.println("Description of this scene goes here");
-           return true;
+
+        Player player = PiratesGame.getPlayer();
+        Actor actor = player.getActor();
+
+        try {
+            Location newLocation = MapControl.moveActor(actor, newRow, newColumn);
+            // print out location and descript of scene in new location
+            System.out.println("\n You moved to row," + newRow + " colum, " + newColumn + "\n");
+            System.out.println(newLocation.getScene().getDescription());
+        } catch (MapControlException cause) {
+            System.out.println(cause.getMessage());
+            return false;
+        }
+
+        return true;
     }
 
-    private void moveNorth() {
-        
-    }
-
-    private void moveSouth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void moveEast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void moveWest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-     
 }
