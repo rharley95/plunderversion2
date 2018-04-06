@@ -6,8 +6,11 @@
 package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.MapControl;
+import byui.cit260.piratesgame.exceptions.GameControlException;
 import byui.cit260.piratesgame.model.Game;
 import byui.cit260.piratesgame.model.Location;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import piratesgame.PiratesGame;
 
 /**
@@ -68,7 +71,13 @@ import piratesgame.PiratesGame;
                 boriddle();
                 break;
             case "R":
+        {
+            try {
                 riddleSo();
+            } catch (GameControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case "Q":
                 return true;
@@ -143,7 +152,7 @@ private void getCrew() {
 
     }
 
-    private void riddleSo() {
+    private void riddleSo() throws GameControlException {
         RiddleSoView riddleSoView = new RiddleSoView();
 
         riddleSoView.displayRiddleSoView();
