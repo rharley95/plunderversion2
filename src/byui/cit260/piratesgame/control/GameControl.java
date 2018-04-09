@@ -6,6 +6,7 @@
 package byui.cit260.piratesgame.control;
 
 import byui.cit260.piratesgame.exceptions.GameControlException;
+import byui.cit260.piratesgame.model.Actor;
 import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.model.Game;
 import byui.cit260.piratesgame.model.Inventory;
@@ -45,6 +46,7 @@ public class GameControl implements Serializable {
         PiratesGame.setPlayer(player);
         PiratesGame.setCurrentGame(userGame);
         userGame.setPlayer(player);
+        PiratesGame.getPlayer().setActor(Actor.You);
 
         Inventory[] items = GameControl.createItems();
         userGame.setItems(items);

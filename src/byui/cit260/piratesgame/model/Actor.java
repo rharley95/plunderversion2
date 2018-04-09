@@ -11,7 +11,11 @@ import java.awt.Point;
  * @author rominapainter
  */
 public enum Actor {
-    
+     You("You","The oldest member in your crew that has “seen things”.\n"
+                + "You want to use his memories and clues to take you to the next clues for your story\n."
+                + "He wears a red bandana and has a scar on his left eye.\n "
+                + "Hank will be found inside the first surrounding island of your story where you find half of the map.\n"  
+            , new Point(1, 2), 1 ),
     Hank("Hank","The oldest member in your crew that has “seen things”.\n"
                 + "You want to use his memories and clues to take you to the next clues for your story\n."
                 + "He wears a red bandana and has a scar on his left eye.\n "

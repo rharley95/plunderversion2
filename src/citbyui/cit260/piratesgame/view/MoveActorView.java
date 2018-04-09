@@ -10,6 +10,7 @@ import byui.cit260.piratesgame.model.Location;
 import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.control.MapControl;
 import byui.cit260.piratesgame.exceptions.MapControlException;
+import byui.cit260.piratesgame.model.RegularScene;
 import java.awt.Point;
 import piratesgame.PiratesGame;
 
@@ -81,7 +82,7 @@ public abstract class MoveActorView extends View {
         try {
             Location newLocation = MapControl.moveActor(actor, newRow, newColumn);
             // print out location and descript of scene in new location
-            System.out.println("\n You moved to row," + newRow + " colum, " + newColumn + "\n");
+            System.out.println("\n You moved to row," + newRow + " column, " + newColumn + "\n");
             System.out.println(newLocation.getScene().getDescription());
         } catch (MapControlException cause) {
             System.out.println(cause.getMessage());

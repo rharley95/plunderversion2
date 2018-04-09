@@ -20,6 +20,7 @@ public class RegularScene implements Serializable{
     private String symbol;
     private String blocked;
     private Location location;
+    
 
     public RegularScene() {
     }
@@ -28,6 +29,7 @@ public class RegularScene implements Serializable{
         this.description = description;
         this.symbol = symbol;
         this.blocked = blocked;
+       
     }
 
     public Location getLocation() {
@@ -72,14 +74,16 @@ public class RegularScene implements Serializable{
         this.blocked = blocked;
     }
 
+   
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + Objects.hashCode(this.description);
-        hash = 37 * hash + Objects.hashCode(this.Scenetype);
-        hash = 37 * hash + Objects.hashCode(this.symbol);
-        hash = 37 * hash + Objects.hashCode(this.blocked);
-        hash = 37 * hash + Objects.hashCode(this.location);
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.description);
+        hash = 59 * hash + Objects.hashCode(this.Scenetype);
+        hash = 59 * hash + Objects.hashCode(this.symbol);
+        hash = 59 * hash + Objects.hashCode(this.blocked);
+        hash = 59 * hash + Objects.hashCode(this.location);
         return hash;
     }
 
@@ -107,9 +111,6 @@ public class RegularScene implements Serializable{
         if (!Objects.equals(this.blocked, other.blocked)) {
             return false;
         }
-        if (this.location != other.location) {
-            return false;
-        }
         return true;
     }
 
@@ -118,6 +119,11 @@ public class RegularScene implements Serializable{
         return "RegularScene{" + "description=" + description + ", Scenetype=" + Scenetype + ", symbol=" + symbol + ", blocked=" + blocked + ", location=" + location + '}';
     }
 
-    
-    
 }
+
+    
+    
+    
+    
+    
+

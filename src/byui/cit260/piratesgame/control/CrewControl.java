@@ -5,7 +5,6 @@
  */
 package byui.cit260.piratesgame.control;
 
-import byui.cit260.piratesgame.exceptions.NumberFormatException;
 
 /**
  *

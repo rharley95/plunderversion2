@@ -46,11 +46,11 @@ public class MapControl {
   
          Location[][] myLocations = createLocations(noOfRows, noOfColumns);
          userMap.setLocations(myLocations);
-         RegularScene[] myScenes = createScenes();
+         RegularScene[] scenes = createScenes();
          Question[] myQuestion = createQuestions();
-//         myScenes.assignQuestionsToScenes(Question[] questions, QuestionScene[] scenes);
+   //      Scenes.assignQuestionsToScenes(Question[] questions, QuestionScene[] scenes);
 //       assignItemsToScenes()
-//        assignScenesToLocations()
+        assignScenesToLocations(scenes, userMap);
         
                 
         return userMap;
@@ -123,8 +123,8 @@ public class MapControl {
         System.out.println("You have a question");
     }
 
-    private static void assignScenesToLocations(RegularScene[] scenes, Map myMap) {
-        Location [][] locations = myMap.getLocations();
+    private static void assignScenesToLocations(RegularScene[] scenes, Map userMap) {
+        Location [][] locations = userMap.getLocations();
         
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.water.ordinal()]);
@@ -167,8 +167,8 @@ public class MapControl {
         Map map = game.getMap(); 
         Location[][] locations = map.getLocations();
                  
-        if (newRow < 1 || newRow > map.getRowCount() ||
-            newColumn < 1 || newColumn > map.getColumnCount()){
+        if (newRow < 0 || newRow > map.getRowCount() ||
+            newColumn < 0 || newColumn > map.getColumnCount()){
             throw new MapControlException("You are trying to move outside the map! That is not allowed, sorry.");         
         }
 

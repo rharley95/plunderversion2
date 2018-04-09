@@ -68,7 +68,7 @@ import piratesgame.PiratesGame;
                 pickCrew();
                 break;
             case "D":
-                boriddle();
+                boRiddle();
                 break;
             case "R":
         {
@@ -176,8 +176,10 @@ private void getCrew() {
 //        boRiddle.display();
 //    }
 
-    private void boriddle() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void boRiddle() {
+        BoRiddleView boRiddle = new BoRiddleView() {};
+
+       boRiddle.display();
     }
 
     private void moveActor() {

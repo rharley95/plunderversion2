@@ -5,7 +5,7 @@
  */
 package citbyui.cit260.piratesgame.view;
 import byui.cit260.piratesgame.control.CrewControl;
-import byui.cit260.piratesgame.exceptions.GameControlException;
+import byui.cit260.piratesgame.exceptions.NumberFormatException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,12 +44,7 @@ public class BoRiddleView extends View {
       //call control method
       
      double distance = 0;
-        try {
-            distance = CrewControl.catchCrewMember(length, height);
-            
-        } catch (byui.cit260.piratesgame.exceptions.NumberFormatException ex) {
-            System.out.println(ex.getMessage());
-        }
+     distance = CrewControl.catchCrewMember(length, height);
       if (distance == -1){
       System.out.println("Invalid length");
        return false;}

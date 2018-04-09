@@ -9,6 +9,8 @@ import byui.cit260.piratesgame.exceptions.GameControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+
+
 /**
  *
  * @author madug
@@ -20,6 +22,7 @@ public class SolveRiddleTest {
 
     /**
      * Test of solveRiddle method, of class SolveRiddle.
+     * @throws byui.cit260.piratesgame.exceptions.GameControlException
      */
     @Test
     public void testSolveRiddle() throws GameControlException {
@@ -38,7 +41,7 @@ public class SolveRiddleTest {
         
         //call method
         
-        double result = instance.solveRiddle(diameter, guess);
+        double result = SolveRiddle.solveRiddle(diameter, guess);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
@@ -91,7 +94,7 @@ public class SolveRiddleTest {
         
         //call method
         
-         result = instance.solveRiddle(diameter, guess);
+         result = SolveRiddle.solveRiddle(diameter, guess);
          
         assertEquals(expResult, result, 0.0);
         
@@ -108,7 +111,7 @@ public class SolveRiddleTest {
         
         //call method
         
-         result = instance.solveRiddle(diameter, guess);
+         result = SolveRiddle.solveRiddle(diameter, guess);
          
         assertEquals(expResult, result, 0.0);
         
@@ -148,3 +151,5 @@ public class SolveRiddleTest {
     }    
         
 }
+ 
+

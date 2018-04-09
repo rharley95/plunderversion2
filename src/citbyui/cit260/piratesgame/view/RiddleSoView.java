@@ -9,7 +9,6 @@ import byui.cit260.piratesgame.control.SolveRiddle;
 import byui.cit260.piratesgame.exceptions.GameControlException;
 import byui.cit260.piratesgame.exceptions.NumberFormatException;
 import java.util.Random;
-
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +22,7 @@ public class RiddleSoView {
     /**
      *
      */
-    public void displayRiddleSoView() {
+    public void displayRiddleSoView() throws GameControlException {
         boolean endView = false;
 
         do {
@@ -72,7 +71,7 @@ public class RiddleSoView {
 
     }
 
-    private boolean doAction(String[] inputs) throws NumberFormatException {
+    private Boolean doAction(String[] inputs) throws NumberFormatException, GameControlException {
         double userResponse = Double.parseDouble(inputs[0]);
         
         double response = 0;
