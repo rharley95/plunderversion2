@@ -5,13 +5,24 @@
  */
 package citbyui.cit260.piratesgame.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import piratesgame.PiratesGame;
 
 /**
  *
  * @author rominapainter
  */
 public abstract class View implements ViewInterface{
+    
+    private String message;
+    protected final BufferedReader keyboard = PiratesGame.getInFile();
+    protected final PrintWriter console = PiratesGame.getOutFile();
+    
     
     public View(){
     }
@@ -42,9 +53,13 @@ public abstract class View implements ViewInterface{
         while (valid == false) {
 
             System.out.println(promptMessage);
-            Scanner userResponse  = new Scanner(System.in);
 
-            String response = userResponse.nextLine();
+            String response = null;
+            try {
+                response = this.keyboard.readLine();
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
             String userInput = response.trim();
 
             if (userInput.length() < 1) {
