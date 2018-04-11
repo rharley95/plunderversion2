@@ -25,6 +25,7 @@ import piratesgame.PiratesGame;
         String[] inputs = new String[1];
        String menuItem = this.getInput
           ("\nGame Menu\n" +
+           "S - Save Game\n"+
           "M - Display Map\n"+
            "W - Move Menu\n"+
             "C - Get Crew\n"+
@@ -46,6 +47,9 @@ import piratesgame.PiratesGame;
 //        menuItem = inputs[0].toUpperCase();
 
         switch (menuItem) {
+             case "S":
+                this.saveGame();
+                break;
             case "M":
                 this.displayMap();
                 break;
@@ -185,6 +189,10 @@ private void getCrew() {
     }
 
     private void riddleSo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void saveGame() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

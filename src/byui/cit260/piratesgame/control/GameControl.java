@@ -61,7 +61,7 @@ public class GameControl implements Serializable {
     }
     
 
-    public static void saveGame(Player player) {
+    public static void saveGame(Game game, String filePath) {
         System.out.println("You have saved your game.");
 
     }
