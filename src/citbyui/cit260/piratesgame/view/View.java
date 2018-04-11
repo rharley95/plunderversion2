@@ -58,12 +58,12 @@ public abstract class View implements ViewInterface{
             try {
                 response = this.keyboard.readLine();
             } catch (IOException ex) {
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(),ex.getMessage());
             }
             String userInput = response.trim();
 
             if (userInput.length() < 1) {
-                System.out.println("You must enter non-blank value.");
+                ErrorView.display(this.getClass().getName(),"You must enter non-blank value.");
                 continue;
             }
 

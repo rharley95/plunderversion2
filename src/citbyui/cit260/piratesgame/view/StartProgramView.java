@@ -26,7 +26,7 @@ public class StartProgramView extends View {
     public String[] getInputs() {
 
         String[] inputs = new String[1];
-        System.out.println("This is a text based role playing game.\n "
+        this.console.println("This is a text based role playing game.\n "
                 + "In this game, you will take the reins in your hand by being the captain of a ship.\n "
                 + "You and your crew members have a goal to find the long lost treasure of General Monkey Spot.\n "
                 + "Lots of people in the town have heard of this treasure.\n "
@@ -56,13 +56,13 @@ public class StartProgramView extends View {
         String playersName = inputs[0];
         Player player = GameControl.savePlayer(playersName);
         if (player == null) {
-            System.out.println("could not create the player"
+            ErrorView.display(this.getClass().getName(),"could not create the player"
                     + "enter a different name.");
             return false;
         }
         
 
-        System.out.println("================================================= " +
+        this.console.println("================================================= " +
                  "\nWelcome to the game " + playersName +
                 "\nWe hope you have a lot of fun!" + 
                 "\n=================================================");

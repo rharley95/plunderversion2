@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author madug
  */
-class TalkCrewView {
+public class TalkCrewView extends View{
 
     void displayTalkCrewView() {
 
@@ -29,13 +29,14 @@ class TalkCrewView {
         } while (endView != true);
 
     }
-    private String[] getInputs() {
+    @Override
+    public String[] getInputs() {
         String[] inputs = new String[1];
 
         boolean valid = false;
         while (valid == false) {
 
-            System.out.println("  H - Hank\n"
+            this.console.println("  H - Hank\n"
                     + "  B - Bo\n"
                     + "  Z – Zebra \n"
                     + "  T - Texas Pit\n"
@@ -46,7 +47,7 @@ class TalkCrewView {
             String userInput = response.trim();
 
             if (userInput.length() < 1) {
-                System.out.println("You must select a valid initial for the Member you want help from.");
+                ErrorView.display(this.getClass().getName(),"You must select a valid initial for the Member you want help from.");
                 continue;
             }
 
@@ -57,7 +58,7 @@ class TalkCrewView {
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem = inputs[0].toUpperCase();
 
@@ -80,7 +81,7 @@ class TalkCrewView {
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid option.");
+                ErrorView.display(this.getClass().getName(),"Please enter a valid option.");
         }
 
         return false;

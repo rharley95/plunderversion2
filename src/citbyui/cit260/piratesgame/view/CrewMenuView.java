@@ -24,7 +24,7 @@ import piratesgame.PiratesGame;
                 
         String[] inputs = new String[1];
 
-            System.out.println("  K - Pick new crew member\n"
+            this.console.println("  K - Pick new crew member\n"
                     + "  T - Talk to a crew member\n"
                     + "  R - Return\n"
                     + "  P - Pause game\n"
@@ -50,7 +50,7 @@ import piratesgame.PiratesGame;
             try {
                 pickCrew();
             } catch (GameControlException ex) {
-                System.out.println(ex.getMessage());
+                this.console.println(ex.getMessage());
             }
         }
                 break;
@@ -66,7 +66,7 @@ import piratesgame.PiratesGame;
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid pirate option.");
+                ErrorView.display(this.getClass().getName(), "Please enter a valid pirate option.");
         }
 
         return false;
@@ -79,12 +79,7 @@ import piratesgame.PiratesGame;
         display();
     }
 
-    private void talkCrew() {
-
-        TalkCrewView talkCrewView = new TalkCrewView();
-
-        talkCrewView.displayTalkCrewView();
-    }
+   
 
     private void returntoGame() {
         ReturnGameView returnGameView = new ReturnGameView();
@@ -93,8 +88,17 @@ import piratesgame.PiratesGame;
     }
 
     private void pauseGame() {
-        System.out.println("on MAIN MENU press P.");
+        this.console.println("on MAIN MENU press P.");
     }
+
+    private void talkCrew() {
+        
+
+        TalkCrewView talkCrewView = new TalkCrewView();
+
+        talkCrewView.displayTalkCrewView();
+    }
+    
 }
 
 

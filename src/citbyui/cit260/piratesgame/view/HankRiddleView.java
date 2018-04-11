@@ -14,7 +14,7 @@ public abstract class HankRiddleView extends View{
 
         String[] inputs = new String[1];
 
-        System.out.println("riddle goes here");
+        this.console.println("riddle goes here");
 
 
         String userInput = this.getInput("You must enter non-blank value.");
@@ -43,7 +43,7 @@ public abstract class HankRiddleView extends View{
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid option.");
+                this.console.println("Please enter a valid option.");
         }
 
         return false;

@@ -7,7 +7,6 @@ package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.SolveRiddle;
 import byui.cit260.piratesgame.exceptions.GameControlException;
-import byui.cit260.piratesgame.exceptions.NumberFormatException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -17,10 +16,11 @@ import java.util.logging.Logger;
  *
  * @author madug
  */
-public class RiddleSoView {
+public abstract class RiddleSoView extends View{
 
     /**
      *
+    
      */
     public void displayRiddleSoView() throws GameControlException {
         boolean endView = false;
@@ -34,7 +34,7 @@ public class RiddleSoView {
                 }
                 endView = doAction(inputs);
             } catch (NumberFormatException ex) {
-                System.out.println(ex.getMessage());
+                this.console.println(ex.getMessage());
             }
 
         } while (endView != true);
@@ -42,7 +42,8 @@ public class RiddleSoView {
         
     }
 
-    private String[] getInputs() {
+    @Override
+    public String[] getInputs() {
 
         String[] inputs = new String[2];
 
@@ -51,7 +52,7 @@ public class RiddleSoView {
             
             Random rand = new Random();
             int value = rand.nextInt(51);
-            System.out.println(" I was thrown off the ship\n"
+            this.console.println(" I was thrown off the ship\n"
                     + " in a circular motion thrown over a diameter of " + value +"m.\n"
                     + " Find the distance over the circle \n"
                     + "and fast\n");
@@ -71,25 +72,37 @@ public class RiddleSoView {
 
     }
 
-    private Boolean doAction(String[] inputs) throws NumberFormatException, GameControlException {
+    /**
+     *
+     * @param inputs
+     * @return 
+
+     */
+    @Override
+    public boolean doAction (String[] inputs){
+        
         double userResponse = Double.parseDouble(inputs[0]);
         
-        double response = 0;
-        response = SolveRiddle.solveRiddle(25, userResponse );
+        double response = userResponse;
+        try {
+            response = SolveRiddle.solveRiddle(25, response);
+        } catch (GameControlException ex) {
+              ErrorView.display(this.getClass().getName(),"hhdhjhdfjhj");
+        }
     
         double diameter = Double.parseDouble(inputs[1]);
                 
         if  (response < 16 || response > 79) {
         
 
-              System.out.println("You are speaking in an unknown language");
+              ErrorView.display(this.getClass().getName(),"You are speaking in an unknown language");
               return false;
                     
         } 
         
         else if(diameter < 10 || diameter > 50) {
            
-            System.out.println("I am dumb");
+            ErrorView.display(this.getClass().getName(),"I am dumb");
             return false;  
         }
         else return true;

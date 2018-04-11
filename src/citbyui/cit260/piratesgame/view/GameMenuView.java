@@ -17,7 +17,7 @@ import piratesgame.PiratesGame;
  *
  * @author rominapainter
  */
-   class GameMenuView extends View{
+   public  class GameMenuView extends View{
  
 
     public String[] getInputs() {
@@ -72,17 +72,13 @@ import piratesgame.PiratesGame;
                 break;
             case "R":
         {
-            try {
-                riddleSo();
-            } catch (GameControlException ex) {
-                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            riddleSo();
         }
                 break;
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid option.");
+                ErrorView.display(this.getClass().getName(),"Please enter a valid option.");
         }
 
         return false;
@@ -91,16 +87,16 @@ import piratesgame.PiratesGame;
     private void displayMap() {
        Game game = PiratesGame.getCurrentGame();
        
-       System.out.println("The map\n");
-       System.out.println("1 2 3 4 5\n");
+       this.console.println("The map\n");
+       this.console.println("1 2 3 4 5\n");
        
        // assign location object to the map in current game
        
        Location[][] locations = game.getMap().getLocations();
        int num = 1;
        for (int i = 0; i < locations.length; i++) {
-           System.out.println();
-           System.out.print(num++ + "|" );
+           this.console.println();
+           this.console.println(num++ + "|" );
            
            for (int j = 0; j < locations[i].length;j++) {
                Location location = locations[i][j];
@@ -146,17 +142,17 @@ private void getCrew() {
     }
 
     private void talkCrew() {
-        TalkCrewView talkCrewView = new TalkCrewView();
+        TalkCrewView talkCrewView = new TalkCrewView() {};
 
         talkCrewView.displayTalkCrewView();
 
     }
-
-    private void riddleSo() throws GameControlException {
-        RiddleSoView riddleSoView = new RiddleSoView();
-
-        riddleSoView.displayRiddleSoView();
-    }
+//
+//    private void riddleSo() throws GameControlException {
+//        RiddleSoView riddleSoView = new RiddleSoView();
+//
+//        riddleSoView.display();
+//    }
 
     private void pickCrew() {
         PickCrewView pickCrewView = new PickCrewView();
@@ -186,6 +182,10 @@ private void getCrew() {
         MoveActorView moveActor = new MoveActorView() {};
 
         moveActor.display();
+    }
+
+    private void riddleSo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    

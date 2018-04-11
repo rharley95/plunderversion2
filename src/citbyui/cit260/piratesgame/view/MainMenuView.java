@@ -7,10 +7,6 @@ package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.GameControl;
 import byui.cit260.piratesgame.exceptions.GameControlException;
-import byui.cit260.piratesgame.model.Game;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import piratesgame.PiratesGame;
 
 /**
@@ -23,7 +19,7 @@ public class MainMenuView extends View {
 
         String[] inputs = new String[1];
 
-        System.out.println(" N - New Game\n"
+        this.console.println(" N - New Game\n"
                 + "  L - Load Game\n"
                 + "  H - Help\n"
                 + "  Q - Quit Program");
@@ -49,7 +45,7 @@ public class MainMenuView extends View {
             try {
                 startNewGame();
             } catch (GameControlException ex) {
-                System.out.println(ex.getMessage());
+                this.console.println(ex.getMessage());
             }
         }
                 break;
@@ -62,7 +58,7 @@ public class MainMenuView extends View {
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid option.");
+                ErrorView.display(this.getClass().getName(), "Please enter a valid option.");
         }
 
         return false;
@@ -90,40 +86,40 @@ public class MainMenuView extends View {
         loadGameView.displayLoadGameView();
     }
 
-    private void getCrew() {
-        PickCrewView pickCrewView = new PickCrewView();
+//    private void getCrew() {
+//        PickCrewView pickCrewView = new PickCrewView();
+//
+//        pickCrewView.display();
+//    }
+//
+//    private void talkCrew() {
+//        TalkCrewView talkCrewView = new TalkCrewView() {};
+//
+//        talkCrewView.displayTalkCrewView();
+//
+//    }
+//
+//    private void riddleSo() {
+//        RiddleSoView riddleSoView = new RiddleSoView() {};
+//
+//        riddleSoView.displayRiddleSoView();
+//    }
+//
+//    private void pickCrew() {
+//        PickCrewView pickCrewView = new PickCrewView();
+//
+//        pickCrewView.display();
+//    }
 
-        pickCrewView.display();
-    }
-
-    private void talkCrew() {
-        TalkCrewView talkCrewView = new TalkCrewView();
-
-        talkCrewView.displayTalkCrewView();
-
-    }
-
-    private void riddleSo() {
-        RiddleSoView riddleSoView = new RiddleSoView();
-
-        riddleSoView.displayRiddleSoView();
-    }
-
-    private void pickCrew() {
-        PickCrewView pickCrewView = new PickCrewView();
-
-        pickCrewView.display();
-    }
-
-    private void mapMenu() {
-       MapMenuView mapMenuView = new MapMenuView() {};
-
-        mapMenuView.display();
-    }
-
-    private void daemon() {
-        BoRiddleView daemonView = new BoRiddleView();
-        
-        daemonView.display();
-    }
+//    private void mapMenu() {
+//       MapMenuView mapMenuView = new MapMenuView() {};
+//
+//        mapMenuView.display();
+//    }
+//
+//    private void boRiddle() {
+//        BoRiddleView daemonView = new BoRiddleView();
+//        
+//        daemonView.display();
+//    }
 }

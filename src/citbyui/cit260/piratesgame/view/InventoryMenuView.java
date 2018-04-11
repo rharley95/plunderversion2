@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author rominapainter
  */
-public class InventoryMenuView {
+public class InventoryMenuView extends View{
     
     private Inventory[] inventoryItems = new Inventory[4];
 
@@ -43,28 +43,28 @@ public class InventoryMenuView {
     
     
     }
-
-    private String[] getInputs() {
+    @Override
+    public String[] getInputs() {
           String[] inputs = new String[1];
           
           
-        System.out.println("Here is a list of your inventory;");
+        this.console.println("Here is a list of your inventory;");
         for (int i = 0; i<this.inventoryItems.length; i++) {
             String itemType = this.inventoryItems[i].getInventoryType();
             String firstLetter = itemType.substring(0,0).toUpperCase();
-            System.out.println("\t" + firstLetter + " - " + itemType);
+            this.console.println("\t" + firstLetter + " - " + itemType);
         }
 
         boolean valid = false;
         Scanner name = new Scanner(System.in);
         while (valid == false) {
 
-            System.out.println("Enter the item that you want");
+            this.console.println("Enter the item that you want");
             String itemSelected = name.nextLine();
             itemSelected = itemSelected.trim();
 
             if (itemSelected.length() < 1) {
-                System.out.println("You must enter a letter.");
+                ErrorView.display(this.getClass().getName(),"You must enter a letter.");
                 continue;
             }
 
@@ -76,7 +76,8 @@ public class InventoryMenuView {
         
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
        String menuItem = inputs[0];
         menuItem = inputs[0].toUpperCase();
 
@@ -96,26 +97,26 @@ public class InventoryMenuView {
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid option.");
+                ErrorView.display(this.getClass().getName(),"Please enter a valid option.");
         }
 
         return false; 
     }
 
     private void goldItem() {
-        System.out.println("You have" );
+        this.console.println("You have" );
     }
 
     private void fishIteam() {
-       System.out.println("You have traveled North! Let's see where else we could go!");
+       this.console.println("You have traveled North! Let's see where else we could go!");
     }
 
     private void mapItem() {
-        System.out.println("You have traveled North! Let's see where else we could go!");
+        this.console.println("You have traveled North! Let's see where else we could go!");
     }
 
     private void swordItem() {
-        System.out.println("You have traveled North! Let's see where else we could go!");
+        this.console.println("You have traveled North! Let's see where else we could go!");
     }
     
     

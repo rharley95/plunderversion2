@@ -13,14 +13,14 @@ import java.util.logging.Logger;
  *
  * @author madug
  */
-public class BoRiddleView extends View {
+public abstract class BoRiddleView extends View {
 
     @Override
     public String[] getInputs() {
         
        String[] inputs = new String[2];
        
-       System.out.println("This is a value with two inputs");
+       this.console.println("This is a value with two inputs");
        String Value = this.getInput("Enter the length");
         if (Value.trim().toUpperCase().equals("Q")) {
             return inputs;
@@ -46,13 +46,15 @@ public class BoRiddleView extends View {
      double distance = 0;
      distance = CrewControl.catchCrewMember(length, height);
       if (distance == -1){
-      System.out.println("Invalid length");
+      ErrorView.display(this.getClass().getName(),
+              "Invalid length");
        return false;}
        if (distance == -2){
-      System.out.println("Invalid height");
+     ErrorView.display(this.getClass().getName(),
+             "Invalid height");
        return false;
        }else
-            {System.out.println("You are succesfull");
+            {this.console.println("You are succesfull");
                 return true;
             }
            

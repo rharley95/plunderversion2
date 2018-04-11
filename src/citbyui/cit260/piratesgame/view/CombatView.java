@@ -16,7 +16,7 @@ public abstract class CombatView extends View {
 
         String[] inputs = new String[1];
 
-        System.out.println(" R - Read Enemy\n"
+        this.console.println(" R - Read Enemy\n"
                 + "  A - Attack Enemy\n"
                 + "  T - Talk to Crew Member\n"
                 + "E - Escape Monster/Come back later"
@@ -51,18 +51,18 @@ public abstract class CombatView extends View {
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid pirate option.");
+                ErrorView.display(this.getClass().getName(),"Please enter a valid pirate option.");
         }
 
         return false;
     }
 
     private void attackEnemy() {
-        System.out.println("You have attacked the enemy! They lose 2 points");
+        this.console.println("You have attacked the enemy! They lose 2 points");
     }
 
     private void readEnemy() {
-        System.out.println("This enemy is HUGE, take a look at those tentacles and beak!");
+        this.console.println("This enemy is HUGE, take a look at those tentacles and beak!");
     }
 
     private void askCrew() {
@@ -72,7 +72,7 @@ public abstract class CombatView extends View {
     }
 
     private void escapeAttack() {
-        System.out.println("Maybe we don't want to fight today...");
+        this.console.println("Maybe we don't want to fight today...");
     }
     
         

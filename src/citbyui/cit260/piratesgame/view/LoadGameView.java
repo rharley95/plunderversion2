@@ -9,12 +9,22 @@ package citbyui.cit260.piratesgame.view;
  *
  * @author rominapainter
  */
-class LoadGameView {
+class LoadGameView  extends View{
     
     void displayLoadGameView() {
     
-    System.out.println("Loading game...");
+    this.console.println("Loading game...");
     
+    }
+
+    @Override
+    public String[] getInputs() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean doAction(String[] inputs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

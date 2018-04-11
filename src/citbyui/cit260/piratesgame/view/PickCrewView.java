@@ -22,7 +22,7 @@ class PickCrewView extends View{
         boolean valid = false;
         while (valid == false) {
 
-            System.out.println("  H - Hank\n"
+            this.console.println("  H - Hank\n"
                     + "  B - Bo\n"
                     + "  Z – Zebra \n"
                     + "  T - Texas Pit\n"
@@ -33,7 +33,7 @@ class PickCrewView extends View{
             String userInput = response.trim();
 
             if (userInput.length() < 1) {
-                System.out.println("You must select a valid initial for the Member.");
+                ErrorView.display(this.getClass().getName(),"You must select a valid initial for the Member.");
                 continue;
             }
 
@@ -68,32 +68,32 @@ class PickCrewView extends View{
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid option.");
+                ErrorView.display(this.getClass().getName(),"Please enter a valid option.");
         }
 
         return false;
     }
 
     private void Hank() {
-        System.out.println("\n" + Actor.Hank.getDescription());
+        this.console.println("\n" + Actor.Hank.getDescription());
         
   
     }
 
     private void Bo() {
-        System.out.println("\n" + Actor.Bo.getDescription());
+        this.console.println("\n" + Actor.Bo.getDescription());
     }
 
     private void Zebra() {
-        System.out.println("\n" + Actor.Zebra.getDescription());
+        this.console.println("\n" + Actor.Zebra.getDescription());
     }
 
     private void TexasPit() {
-        System.out.println("\n" + Actor.TexasPit.getDescription());
+        this.console.println("\n" + Actor.TexasPit.getDescription());
     }
 
     private void BacktoGame() {
-        System.out.println("Go back to main menu.\n");
+        this.console.println("Go back to main menu.\n");
     }
 
 }

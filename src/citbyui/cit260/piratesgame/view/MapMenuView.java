@@ -20,7 +20,7 @@ public class MapMenuView extends View{
     @Override
     public String[] getInputs() {
         String[] inputs = new String[1];
-            System.out.println("+--+--+--+--+--+                           \n"
+            this.console.println("+--+--+--+--+--+                           \n"
                     + "|~~|~~|/\\|  |  |\n"
                     + "+--+--+--+--+--+\n"
                     + "|  |  |~~|  |  |\n"
@@ -86,38 +86,38 @@ public class MapMenuView extends View{
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid option.");
+                ErrorView.display(this.getClass().getName(), "Please enter a valid option.");
         }
 
         return false;
     }
 
     private void travelNorth() {
-        System.out.println("You have traveled North! Let's see where else we could go!");
+        this.console.println("You have traveled North! Let's see where else we could go!");
     }
 
     private void travelWest() {
-        System.out.println("You have traveled West! Let's see where else we could go!");
+        this.console.println("You have traveled West! Let's see where else we could go!");
     }
 
     private void travelEast() {
-        System.out.println("You have traveled East! Let's see where else we could go!");
+        this.console.println("You have traveled East! Let's see where else we could go!");
     }
 
     private void travelSouth() {
-        System.out.println("You have traveled South! Let's see where else we could go!");
+        this.console.println("You have traveled South! Let's see where else we could go!");
     }
 
     private void checkInventory() {
-        System.out.println("Here is your inventory!");
+        this.console.println("Here is your inventory!");
     }
 
     private void checkCrew() {
-        System.out.println("T - Talk to crew\n" + "B - Back to last menu");
+        this.console.println("T - Talk to crew\n" + "B - Back to last menu");
     }
 
     private void checkShip() {
-        System.out.println("Stat1\n"
+        this.console.println("Stat1\n"
                 + "Stat2\n"
                 + "Stat3");
     }
@@ -129,7 +129,7 @@ public class MapMenuView extends View{
     }
 
     private void saveGame() {
-        System.out.println("Game saved.");
+        this.console.println("Game saved.");
     
     }
     

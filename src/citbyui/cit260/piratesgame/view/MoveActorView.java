@@ -24,9 +24,9 @@ public abstract class MoveActorView extends View {
     public String[] getInputs() {
 
         String[] inputs = new String[1];
-        System.out.println("Move the actor to your choice of location");
+        this.console.println("Move the actor to your choice of location");
 
-        System.out.println("N - Move North\n"
+        this.console.println("N - Move North\n"
                 + "S - Move South\n"
                 + "E - Move East\n"
                 + "W - Move West\n"
@@ -72,7 +72,7 @@ public abstract class MoveActorView extends View {
             case "Q":
                 return true;
             default:
-                System.out.println("Please enter a valid option.");
+                this.console.println("Please enter a valid option.");
                 return false;
         }
 
@@ -82,10 +82,10 @@ public abstract class MoveActorView extends View {
         try {
             Location newLocation = MapControl.moveActor(actor, newRow, newColumn);
             // print out location and descript of scene in new location
-            System.out.println("\n You moved to row," + newRow + " column, " + newColumn + "\n");
-            System.out.println(newLocation.getScene().getDescription());
+            this.console.println("\n You moved to row," + newRow + " column, " + newColumn + "\n");
+            this.console.println(newLocation.getScene().getDescription());
         } catch (MapControlException cause) {
-            System.out.println(cause.getMessage());
+            this.console.println(cause.getMessage());
             return false;
         }
 
