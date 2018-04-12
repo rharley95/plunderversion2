@@ -35,7 +35,7 @@ public abstract class View implements ViewInterface{
             String[] inputs = this.getInputs();
 
             if (inputs[0].length() < 1 || inputs[0].equals("Q")) {
-                return;
+                return ;
             }
             endView = doAction(inputs);
 

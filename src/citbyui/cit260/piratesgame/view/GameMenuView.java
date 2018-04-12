@@ -47,6 +47,9 @@ import piratesgame.PiratesGame;
 //        menuItem = inputs[0].toUpperCase();
 
         switch (menuItem) {
+            case "O":
+                this.printingReport();
+                break;
              case "S":
                 this.saveGame();
                 break;
@@ -207,6 +210,10 @@ private void getCrew() {
         PrintReportView printReportView = new PrintReportView();
         
         printReportView.display();
+    }
+
+    private void printingReport() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
