@@ -33,7 +33,7 @@ import piratesgame.PiratesGame;
             "P - Pick Crew\n"+
             "D - riddle\n"+
             "R - Another riddle\n"+
-                  
+            "N - Print Report\n"+       
           "H - Help\n"  );
         inputs[0] = menuItem;   
           
@@ -71,6 +71,9 @@ import piratesgame.PiratesGame;
             case "P":
                 pickCrew();
                 break;
+            case "N":
+                printReport();
+                break;    
             case "D":
                 boRiddle();
                 break;
@@ -189,13 +192,21 @@ private void getCrew() {
     }
 
     private void riddleSo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        RiddleSoView riddleSo = new RiddleSoView();
+        
+        riddleSo.display();
     }
 
     private void saveGame() {
         SaveGameView saveGameView = new SaveGameView();
         
         saveGameView.display();
+    }
+
+    private void printReport() {
+        PrintReportView printReportView = new PrintReportView();
+        
+        printReportView.display();
     }
 
    

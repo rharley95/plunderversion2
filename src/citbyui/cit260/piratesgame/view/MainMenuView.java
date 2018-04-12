@@ -6,7 +6,9 @@
 package citbyui.cit260.piratesgame.view;
 
 import byui.cit260.piratesgame.control.GameControl;
+import static byui.cit260.piratesgame.control.GameControl.startSavedGame;
 import byui.cit260.piratesgame.exceptions.GameControlException;
+import java.io.IOException;
 import piratesgame.PiratesGame;
 
 /**
@@ -127,6 +129,27 @@ public class MainMenuView extends View {
 //    }
 
     private void savedGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-}
+       this.console.println("\n\nEnter the file Path for the file where you  saved the game");
+       
+       String filePath = "";
+       
+       try{
+           filePath = keyboard.readLine();
+       }
+       catch(IOException ex){
+       ErrorView.display(this.getClass().getName(), "Error Retrieving game from file: '" + filePath + " '");
+       }
+       
+       try{
+       GameControl.saveGame(PiratesGame.getCurrentGame(), filePath);
+       }
+       catch(GameControlException | IOException ex){
+           ErrorView.display("MainMenuView", ex.getMessage());
+       }
+       
+       }
+    
+    
+       }
+      
+ 

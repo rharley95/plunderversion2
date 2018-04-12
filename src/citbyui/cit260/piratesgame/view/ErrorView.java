@@ -18,7 +18,7 @@ public class ErrorView {
     
     public static void display(String className,String errorMessage) {
         console.println(
-        "\n-- ERROR----------------------------------------------"
+        "\n-------------------- ERROR----------------------------------"
         +"\n" + errorMessage
         +"\n-----------------------------------------------------");
         

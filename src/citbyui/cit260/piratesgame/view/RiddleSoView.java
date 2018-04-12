@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author madug
  */
-public abstract class RiddleSoView extends View{
+public  class RiddleSoView extends View{
 
     /**
      *
@@ -79,16 +79,17 @@ public abstract class RiddleSoView extends View{
 
      */
     @Override
-    public boolean doAction (String[] inputs){
+    public boolean doAction (String[] inputs)throws NumberFormatException{
         
         double userResponse = Double.parseDouble(inputs[0]);
         
         double response = userResponse;
         try {
             response = SolveRiddle.solveRiddle(25, response);
+        } catch (NumberFormatException ex) {
+              ErrorView.display(this.getClass().getName(),"You need to give the right answer to move on");
         } catch (GameControlException ex) {
-              ErrorView.display(this.getClass().getName(),"hhdhjhdfjhj");
-        }
+             ErrorView.display(this.getClass().getName(),"You need to give the right answer to move on");
     
         double diameter = Double.parseDouble(inputs[1]);
                 
@@ -107,9 +108,10 @@ public abstract class RiddleSoView extends View{
         }
         else return true;
     }
+        return false;
 
 
-
+    }
 
 }
       

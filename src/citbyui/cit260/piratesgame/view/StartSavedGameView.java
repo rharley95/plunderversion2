@@ -17,10 +17,10 @@ import piratesgame.PiratesGame;
 public class StartSavedGameView extends View {
 
     @Override
-    public String[] getInputs() {
-       String[] inputs = new String[1];
+    public String [] getInputs(){
+        String[] inputs = new String[1];
         
-        this.console.println("\nPress 'R' to  start the game under your user name.");
+        this.console.println("\nPress 'R' to start the game under your user name.");
 
        String playerinput = this.getInput("Enter Player's name:");
 
@@ -32,20 +32,25 @@ public class StartSavedGameView extends View {
     
     
     @Override
-    
-    public boolean doAction(String[] inputs) throws GameControlException {
+    public boolean doAction(String[] inputs){
         String filePath = inputs[0];
         
          
         try{
              Game game = PiratesGame.getCurrentGame();
          }
-        catch (GameControlException ex) {
+        catch (Exception ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         return false;
          }
         
-        this.console.println("Your game is saved!");
- return true;
+        GameMenuView savedgame = new GameMenuView();
+        savedgame.display();
+        
+
+        return true;
     }  
-}
+
+    
+    }
+
