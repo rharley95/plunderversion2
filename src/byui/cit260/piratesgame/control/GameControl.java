@@ -92,7 +92,7 @@ public class GameControl implements Serializable {
             try (ObjectOutputStream inObject = new ObjectOutputStream(in)) {
                  inObject.readObject(game);
                 game = (Game)inObject.readObject();
-                PiratesGame.setCurrentGame(UserGame);
+                PiratesGame.setCurrentGame(game);
                 PiratesGame.setPlayer(game.getPlayer()player
              );
             }
