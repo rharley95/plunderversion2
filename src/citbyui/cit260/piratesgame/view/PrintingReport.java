@@ -8,6 +8,7 @@ package citbyui.cit260.piratesgame.view;
 /**
  *
  * @author rominapainter
+ * Individual assignment from romina number 12.
  */
 public class PrintingReport extends View{
 
@@ -28,19 +29,7 @@ public class PrintingReport extends View{
          String filePath = inputs[0];
          
          
-       try {
-            GameControl.createItem(game, filePath);
-       } catch (GameControlException ex) {
-           return false;
-       } catch (IOException ex) {
-            ErrorView.display(this.getClass().getName(), ex.getMessage());
-     this.console.println("Here is a list of your inventory;");
-        for (int i = 0; i<this.inventoryItems.length; i++) {
-            String itemType = this.inventoryItems[i].getInventoryType();
-            String firstLetter = itemType.substring(0,0).toUpperCase();
-            this.console.println("\t" + firstLetter + " - " + itemType);
-        }
-         
+     
          this.console.println("Your report is printed!");
         return true;
     }
