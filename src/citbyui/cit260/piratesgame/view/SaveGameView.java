@@ -18,10 +18,10 @@ import piratesgame.PiratesGame;
  * @author rominapainter
  */
 
-public abstract  class SaveGameView extends View{
-   
-                  
-    public String[] getInputs(String promptMessage){
+public class SaveGameView extends View {
+    
+   @Override
+    public String getInput(String promptMessage){
         String[] inputs = new String[1];
         
         this.console.println("\nPress 'S' to save the game under your user name.");
@@ -30,11 +30,11 @@ public abstract  class SaveGameView extends View{
 
             inputs[1] = playerinput;
         
-        return inputs;
+        return inputs[1];
     }
     
     @Override
-    public boolean doAction(String [] inputs)  {
+    public boolean doAction(String [] inputs) {
         String filePath = inputs[0];
         
          Game game = PiratesGame.getCurrentGame();
@@ -53,4 +53,10 @@ public abstract  class SaveGameView extends View{
  return true;
 }
 
+    @Override
+    public String[] getInputs() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }

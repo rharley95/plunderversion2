@@ -17,35 +17,41 @@ import piratesgame.PiratesGame;
 public class StartSavedGameView extends View {
 
     @Override
-    public String[] getInputs() {
-       String[] inputs = new String[1];
+    public String getInput(String promptMessage){
+        String[] inputs = new String[1];
         
-        this.console.println("\nPress 'R' to  start the game under your user name.");
+        this.console.println("\nPress 'R' to start the game under your user name.");
 
        String playerinput = this.getInput("Enter Player's name:");
 
             inputs[1] = playerinput;
         
-        return inputs;
+        return inputs[1];
     }
 
     
     
     @Override
-    
-    public boolean doAction(String[] inputs) throws GameControlException {
+    public boolean doAction(String[] inputs){
         String filePath = inputs[0];
         
          
         try{
              Game game = PiratesGame.getCurrentGame();
          }
-        catch (GameControlException ex) {
+        catch (Exception ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         return false;
          }
         
-        this.console.println("Your game is saved!");
- return true;
+        GameMenuView savedgame = new GameMenuView();
+        
+
+        return true;
     }  
+
+    @Override
+    public String[] getInputs() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -9,8 +9,11 @@ import byui.cit260.piratesgame.exceptions.GameControlException;
 import byui.cit260.piratesgame.model.Actor;
 import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.model.Game;
+import byui.cit260.piratesgame.model.Inventory;
+import byui.cit260.piratesgame.model.InventoryType;
 //import byui.cit260.piratesgame.model.Inventory;
 import byui.cit260.piratesgame.model.Map;
+import citbyui.cit260.piratesgame.view.ErrorView;
 import java.io.Serializable;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
@@ -81,33 +84,53 @@ public class GameControl implements Serializable {
             }
         }
     }
+    
+    public static void startSavedGame(String filePath) throws GameControlException{
+            
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filePath)){
+        ObjectInputStream input = new ObjectInputStream(fips);
+        
+        game = (Game) input.readObject();
+        
+        }
+        
+        catch(Exception ex){
+        throw new GameControlException(ex.getMessage());
+        }
+        
+        PiratesGame.setCurrentGame(game);
+    
+    }
+        
+    
 
     public static Game getGame(String filePath) throws GameControlException, ClassNotFoundException, IOException {
         Game game = null;
         if (filePath == null) {
             throw new GameControlException("hhjhfhjkkkjjkfhjh");
         }
-        try (FileOutputStream in = new FileOutputStream(filePath)) {
+        try (FileInputStream in = new FileInputStream(filePath)) {
 
-            try (ObjectOutputStream inObject = new ObjectOutputStream(in)) {
-                 inObject.readObject(game);
+            try (ObjectInputStream inObject = new ObjectInputStream(in)) {
                 game = (Game)inObject.readObject();
-                PiratesGame.setCurrentGame(UserGame);
-                PiratesGame.setPlayer(game.getPlayer()player
-             );
+                PiratesGame.setCurrentGame(game);
+                PiratesGame.setPlayer(game.getPlayer());
             }
             catch (ClassNotFoundException ex) {
-                System.out.println("could not load game");
+                throw new GameControlException(ex.getMessage());
             }
-        } catch (IOException ex) (System.out.println("I/O Erro" + ex.getMessage());
-
+        } catch (IOException ex) {
+            System.out.println("I/O Error" + ex.getMessage());
         }
+        
+        return game;
     }
-}
 
-public static class Inventory[] createItems() {
-
-        Inventory[] myItems = new Inventory[3];
+    private static Inventory[] createItems() {
+        
+          Inventory[] myItems = new Inventory[3];
         Inventory fish = new Inventory("Fish", 0, 5);
         myItems[InventoryType.Fish.ordinal()] = fish;
         Inventory gold = new Inventory("Gold", 0, 10);
@@ -117,5 +140,5 @@ public static class Inventory[] createItems() {
 
         return myItems;
     }
-
 }
+
