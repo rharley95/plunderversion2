@@ -8,14 +8,19 @@ package citbyui.cit260.piratesgame.view;
 import byui.cit260.piratesgame.control.GameControl;
 import byui.cit260.piratesgame.exceptions.GameControlException;
 import byui.cit260.piratesgame.model.Game;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import piratesgame.PiratesGame;
 
 /**
  *
  * @author rominapainter
  */
-public abstract class SaveGameView extends View{
-    
+
+public abstract  class SaveGameView extends View{
+   
+                  
     public String[] getInputs(String promptMessage){
         String[] inputs = new String[1];
         
@@ -29,7 +34,7 @@ public abstract class SaveGameView extends View{
     }
     
     @Override
-    public boolean doAction(String [] inputs) {
+    public boolean doAction(String [] inputs)  {
         String filePath = inputs[0];
         
          Game game = PiratesGame.getCurrentGame();
@@ -37,12 +42,15 @@ public abstract class SaveGameView extends View{
         try{
             GameControl.saveGame(game, filePath);
          }
-        catch(GameControlException ex){
+        catch (GameControlException ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         return false;
-         }
+         } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
         
         this.console.println("Your game is saved!");
  return true;
 }
+
 }

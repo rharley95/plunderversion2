@@ -22,6 +22,7 @@ public class MainMenuView extends View {
         this.console.println(" N - New Game\n"
                 + "  L - Load Game\n"
                 + "  H - Help\n"
+                + "  S - Start Saved game\n"
                 + "  Q - Quit Program");
 
 
@@ -54,6 +55,8 @@ public class MainMenuView extends View {
                 break;
             case "H":
                 getHelp();
+            case "S":
+                savedGame();    
                 break;
             case "Q":
                 return true;
@@ -122,4 +125,8 @@ public class MainMenuView extends View {
 //        
 //        daemonView.display();
 //    }
+
+    private void savedGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

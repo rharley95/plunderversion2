@@ -193,7 +193,9 @@ private void getCrew() {
     }
 
     private void saveGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        SaveGameView saveGameView = new SaveGameView();
+        
+        saveGameView.display();
     }
 
    

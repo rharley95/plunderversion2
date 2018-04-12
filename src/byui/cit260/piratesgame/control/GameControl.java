@@ -9,10 +9,15 @@ import byui.cit260.piratesgame.exceptions.GameControlException;
 import byui.cit260.piratesgame.model.Actor;
 import byui.cit260.piratesgame.model.Player;
 import byui.cit260.piratesgame.model.Game;
-import byui.cit260.piratesgame.model.Inventory;
-import byui.cit260.piratesgame.model.InventoryType;
+//import byui.cit260.piratesgame.model.Inventory;
 import byui.cit260.piratesgame.model.Map;
 import java.io.Serializable;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
 import piratesgame.PiratesGame;
 
 /**
@@ -35,13 +40,13 @@ public class GameControl implements Serializable {
     }
 
     public static void createNewGame(Player player) throws GameControlException {
-        
+
         if (player == null) {
             throw new GameControlException("Something went wrong.");
         }
-        
+
         System.out.println("Welcome to a new game!");
-        
+
         Game userGame = new Game();
         PiratesGame.setPlayer(player);
         PiratesGame.setCurrentGame(userGame);
@@ -59,16 +64,49 @@ public class GameControl implements Serializable {
         userGame.setMap(myMap);
 
     }
-    
 
-    public static void saveGame(Game game, String filePath) {
-        System.out.println("You have saved your game.");
+    public static void saveGame(Game game, String filePath) throws GameControlException, FileNotFoundException, IOException {
 
+        if (game == null || filePath.length() < 1) {
+
+            throw new GameControlException("Your game is not able to save");
+        }
+        try (FileOutputStream out = new FileOutputStream(filePath)) {
+
+            try (ObjectOutputStream outObject = new ObjectOutputStream(out)) {
+                outObject.writeObject(game);
+            } catch (IOException ex) {
+                System.out.println("You have saved your game." + ex.getMessage());
+
+            }
+        }
     }
-    
 
-    public static Inventory[] createItems() {
-        
+    public static Game getGame(String filePath) throws GameControlException, ClassNotFoundException, IOException {
+        Game game = null;
+        if (filePath == null) {
+            throw new GameControlException("hhjhfhjkkkjjkfhjh");
+        }
+        try (FileOutputStream in = new FileOutputStream(filePath)) {
+
+            try (ObjectOutputStream inObject = new ObjectOutputStream(in)) {
+                 inObject.readObject(game);
+                game = (Game)inObject.readObject();
+                PiratesGame.setCurrentGame(UserGame);
+                PiratesGame.setPlayer(game.getPlayer()player
+             );
+            }
+            catch (ClassNotFoundException ex) {
+                System.out.println("could not load game");
+            }
+        } catch (IOException ex) (System.out.println("I/O Erro" + ex.getMessage());
+
+        }
+    }
+}
+
+public static class Inventory[] createItems() {
+
         Inventory[] myItems = new Inventory[3];
         Inventory fish = new Inventory("Fish", 0, 5);
         myItems[InventoryType.Fish.ordinal()] = fish;

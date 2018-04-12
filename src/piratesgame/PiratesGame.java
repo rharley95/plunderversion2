@@ -52,7 +52,6 @@ public class PiratesGame {
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.display();
        
-       return; 
        } catch (Throwable e){
        System.out.println("Exception: " + e.toString() +
                "\nCause: " + e.getCause() +
