@@ -26,7 +26,7 @@ public class SleepView extends View{
 "                                                                                                                                    .\n");
 
                 
-            String playername = this.getInput("Enter Player's name:");
+            String playername = this.getInput("Enter your name. I must have a bad memory:");
 
             inputs[0] = playername;
 

@@ -5,8 +5,6 @@
  */
 package citbyui.cit260.piratesgame.view;
 
-import byui.cit260.piratesgame.control.CrewControl;
-
 /**
  *
  * @author rominapainter
