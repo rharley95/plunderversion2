@@ -72,7 +72,7 @@ public abstract class MoveActorView extends View {
             case "Q":
                 return true;
             default:
-                this.console.println("Please enter a valid option.");
+                ErrorView.display(this.getClass().getName(),"Please enter a valid option.");
                 return false;
         }
 

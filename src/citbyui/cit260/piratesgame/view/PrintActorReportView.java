@@ -20,6 +20,7 @@ import piratesgame.PiratesGame;
 /**
  *
  * @author madug
+ * MY INDIVIDUAL ASSIGNMENT FOR 12
  */
 public class PrintActorReportView extends View {
 

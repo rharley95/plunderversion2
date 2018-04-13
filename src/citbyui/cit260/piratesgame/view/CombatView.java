@@ -12,6 +12,7 @@ package citbyui.cit260.piratesgame.view;
 public abstract class CombatView extends View {
     
     
+        @Override
         public String[] getInputs() {
 
         String[] inputs = new String[1];

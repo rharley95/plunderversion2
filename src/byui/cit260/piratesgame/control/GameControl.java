@@ -75,7 +75,7 @@ public class GameControl implements Serializable {
 
         if (game == null || filePath.length() < 1) {
 
-            throw new GameControlException("Your game is not able to save");
+            throw new GameControlException("Your game cannot be found");
         }
         try (FileOutputStream out = new FileOutputStream(filePath)) {
 
