@@ -48,7 +48,8 @@ public abstract class BoRiddleView extends View {
       if (distance == -1){
       ErrorView.display(this.getClass().getName(),
               "Invalid length");
-       return false;}
+       return false;
+      }
        if (distance == -2){
      ErrorView.display(this.getClass().getName(),
              "Invalid height");

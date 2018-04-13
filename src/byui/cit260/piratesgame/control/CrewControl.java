@@ -14,7 +14,12 @@ public class CrewControl {
   
     public static double catchCrewMember(double length,double height)throws NumberFormatException{
 
-         if (length < 1 || length > 11){
+         
+        System.out.println("length> " + length);
+        
+        System.out.println("height : " + height);
+        
+        if (length < 1 || length > 11){
           throw new NumberFormatException("Not right! Try another length!");
         }
 
