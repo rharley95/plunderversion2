@@ -5,8 +5,6 @@
  */
 package citbyui.cit260.piratesgame.view;
 
-import byui.cit260.piratesgame.control.GameControl;
-import byui.cit260.piratesgame.exceptions.GameControlException;
 import byui.cit260.piratesgame.model.Game;
 import piratesgame.PiratesGame;
 
@@ -20,9 +18,9 @@ public class StartSavedGameView extends View {
     public String [] getInputs(){
         String[] inputs = new String[1];
         
-        this.console.println("\nPress 'R' to start the game under your user name.");
+        this.console.println("\nPress 'R' to start the savedgame.");
 
-       String playerinput = this.getInput("Enter Player's name:");
+       String playerinput = this.getInput("Enter File name:");
 
             inputs[1] = playerinput;
         

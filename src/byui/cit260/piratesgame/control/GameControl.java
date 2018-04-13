@@ -21,6 +21,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
+import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.util.ArrayList;
 import piratesgame.PiratesGame;
 
 /**
@@ -140,5 +143,26 @@ public class GameControl implements Serializable {
 
         return myItems;
     }
-}
+    
+    public static void PrintActorReport(Actor[] actors,String outputLocation) throws FileNotFoundException {
+           
+      
+             try (PrintWriter out = new PrintWriter(outputLocation)) {
 
+            out.println("\n\n          Actor Report       ");
+            out.printf("%n%-20s%10s%10s", "Description", "Name", "Coordinates");
+            out.printf("%n%-20s%10s%10s", "---------------", "---------","-----------");
+            
+            for (Actor actor : actors) {
+            
+            out.printf("%n%-20s%80s%10S", actor.getDescription()
+                                          , actor.getName()
+                                          , actor.getCoordinates().getX() + ", " + actor.getCoordinates().getY());
+                                 
+              }
+        } catch (IOException ex)  {
+              throw new FileNotFoundException(ex.getMessage());
+       }
+}
+    
+}

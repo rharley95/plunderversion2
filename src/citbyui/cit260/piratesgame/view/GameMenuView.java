@@ -204,7 +204,7 @@ private void getCrew() {
     }
 
     private void printReport() {
-        PrintReportView printReportView = new PrintReportView();
+        PrintActorReportView printReportView = new PrintActorReportView();
         
         printReportView.display();
     }

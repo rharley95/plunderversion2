@@ -1,0 +1,28 @@
+
+
+          Actor Report       
+
+Description                           Name                                                    Coordinates
+---------------                                                                  --------------------
+The oldest member in your crew that has “seen things”.
+You want to use his memories and clues to take you to the next clues for your story
+.He wears a red bandana and has a scar on his left eye.
+ Hank will be found inside the first surrounding island of your story where you find half of the map.
+                                                                   You  1.0, 2.0
+The oldest member in your crew that has “seen things”.
+You want to use his memories and clues to take you to the next clues for your story
+.He wears a red bandana and has a scar on his left eye.
+ Hank will be found inside the first surrounding island of your story where you find half of the map.
+                                                                  Hank  1.0, 2.0
+Bo is the youngest member of your crew.
+He may not know much, but he’s got eyes of an eagle.
+Bo will be the one to spot another ship coming your way to attack.
+You find him swimming in the ocean on a lifesaver, who got rid of him??????.
+                                                                    bo  1.0, 3.0
+ He leads you to the second half of your map to the treasure.
+ A man of a few words. “...” is his favorite quote.
+you might find it useful to follow him and he will probably turn out to be the most faithful crew member.
+                                                                 zebra  1.0, 3.0
+He will be the one you find the key to the treasure with in island 3.
+Texas Pit is a pirate with a cowboy complex.
+                                                             Texas Pit  1.0, 4.0

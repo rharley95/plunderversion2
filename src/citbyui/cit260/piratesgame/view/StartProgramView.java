@@ -68,9 +68,9 @@ public class StartProgramView extends View {
                 "\n=================================================");
     
     
-   MainMenuView mainMenuView = new MainMenuView();
+   WelcomeView welcomeView = new WelcomeView();
 
-        mainMenuView.display();
+        welcomeView.display();
 
         return true;
     }
